@@ -4,7 +4,7 @@ $(document).ready(function(){
         //sectionsColor: ['aqua','crimson','green','darkviolet'],
         anchors: ['page1','page2','page3','page4'],
         navigation: true,
-        navigationTooltips: ['它，终于来了','真正与你贴近的个人设备','非同一般的精准计时','在三个特点鲜明的系列中找到你的风格'],
+        navigationTooltips: ['一个学习者','兴趣爱好','项目经验','技能树'],
         //滚动到某一屏后产生的动画效果
         afterLoad: function(link, index){
             switch (index){
