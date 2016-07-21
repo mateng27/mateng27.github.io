@@ -26,7 +26,7 @@ tags:
 	
 	所以这次直接把整个博客重新上传了新的仓库，开始自己记录。
 	
-	![Alt text](./1469060678143.png)
+	![Alt text](http://7xtgob.com2.z0.glb.clouddn.com/blog.png)
 
 
 - 新增了个人项目滚屏页面
