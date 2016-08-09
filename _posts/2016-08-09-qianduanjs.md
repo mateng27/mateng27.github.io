@@ -29,12 +29,14 @@ tags:
 
 ## 基础概念
 
-1. 声明变量：
+- 声明变量：
+
 ```
  var mynum = 8;
 ```
 
-2. 判断语句（if...else）
+- 判断语句（if...else）
+
 ```
 <script type="text/javascript">
 	   var myage = 18;
@@ -44,7 +46,8 @@ tags:
 	   { document.write("未满18岁，你不是成年人。");}
 	</script>
 ```
-3.函数
+
+- 函数
 
 ```
 function add2(){
@@ -52,7 +55,8 @@ var sum = 3 + 2;
 alert(sum);}
 ```
 
-4. 输出内容
+- 输出内容
+
 ```
   <script type="text/javascript">
     var mystr="我是";
@@ -61,7 +65,7 @@ alert(sum);}
 	document.write(mystr+mychar+"的忠实粉丝"); </script>
 ```
 
-5. 警告（alert 消息对话框）
+- 警告（alert 消息对话框）
 
 ```
 <!DOCTYPE HTML>
@@ -82,7 +86,7 @@ alert(mynum);
 </html>
 ```
 
-6. 确认（confirm 消息对话框）
+- 确认（confirm 消息对话框）
 
 ```
 <!DOCTYPE HTML>
@@ -120,9 +124,10 @@ alert(mynum);
 </html>
 ```
 
-7. 提问
+- 提问
 
-```<script type="text/javascript">
+```
+<script type="text/javascript">
 		  function rec(){
 			var score; //score变量，用来存储用户输入的成绩值。
 			score =prompt("输入你的成绩","0-100的数字");
@@ -143,12 +148,12 @@ alert(mynum);
 		       document.write("要努力了!");
 			}
 		  }
-		  </script>```
+		  </script>
 ```
 
 
 
-8. 打开新窗口
+- 打开新窗口
 
 ```
 	<script type="text/javascript">
