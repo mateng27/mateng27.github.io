@@ -85,6 +85,18 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
+        title: "李笑来",
+        href: "http://xiaolai.li/"
+    },{
+        title: "小土刀",
+        href: "http://wdxtub.com/"
+    },{
+        title: "暗时间",
+        href: "http://mindhacks.cn"
+    }，{
+        title: "前端-为网而生",
+        href: "http://beforweb.com/front-end"
+    }，{
         title: "黄玄的博客",
         href: "http://huangxuan.me"
     },{
@@ -99,12 +111,6 @@ friends: [
     },{
         title: "Geno1024的博客",
         href: "http://geno1024.com/"
-    },{
-        title: "李笑来",
-        href: "http://xiaolai.li/"
-    },{
-        title: "小土刀",
-        href: "http://wdxtub.com/"
     },{
         title: "马腾的lofter",
         href: "http://matengteng.lofter.com"
