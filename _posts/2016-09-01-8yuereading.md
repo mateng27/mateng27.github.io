@@ -9,7 +9,7 @@ catalog: true
 tags:
     - Reading
     - 笔记
-    - 随想录
+    - 读书
     - 电影
 ---
 
