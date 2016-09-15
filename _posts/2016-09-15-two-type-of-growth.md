@@ -38,6 +38,7 @@ tags:
 这个不难理解，初期很容易，想要达到更高的水准需要花费巨大的精力和时间，还不一定成功。
 
 符合这个类型的活动有这些：
+
 - Athletic performance
 - Weight gain/loss
 - Learning a new language
@@ -51,6 +52,7 @@ tags:
 这个概念已经比较熟悉了，在其他书中也一直看到。事物前期的增长时间机器缓慢，枯燥，但是一旦跃过某一个临界值，便会出现“恍然大悟”。
 
 佛家开悟就是这样的一个增长过程吧，此外，Young说
+
 - Technological improvement
 - Business growth
 - Wealth
