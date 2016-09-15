@@ -1,4 +1,3 @@
-
 ---
 layout:     post
 title:      "对数增长V.S.指数增长"
