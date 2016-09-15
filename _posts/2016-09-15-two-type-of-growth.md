@@ -20,6 +20,7 @@ tags:
 来源的文章如下面的：
 
 [Two Types of Growth](https://www.scotthyoung.com/blog/2013/02/05/two-types-of-growth/)
+
 [The Structures of Growth](http://www.nytimes.com/2014/06/17/opinion/david-brooks-learning-is-no-easy-task.html?_r=0)
 
 指数增长已经了解过，这次加入了两种模式的对比，更加突出，记录下思考。
@@ -45,7 +46,7 @@ tags:
 
 **指数增长**
 
-![@指数增长 | center ](http://7xtgob.com2.z0.glb.clouddn.com/16-9-15/91226240.jpg)
+![@指数增长](http://7xtgob.com2.z0.glb.clouddn.com/16-9-15/91226240.jpg)
 
 这个概念已经比较熟悉了，在其他书中也一直看到。事物前期的增长时间机器缓慢，枯燥，但是一旦跃过某一个临界值，便会出现“恍然大悟”。
 
