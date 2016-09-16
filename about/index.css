@@ -47,7 +47,7 @@ body{
 
 
 /* 内容模块 */
-
+}
 .main a{
     color:#0085a1;
 }
@@ -57,8 +57,8 @@ body{
 }
 
 .main, .container > header {
-    width: 90%;
-    max-width: 69em;
+    width: 100%;
+    max-width: 40em;
     margin: 0 auto;
     padding: 0 1.375em;
 }
@@ -250,7 +250,7 @@ body{
     font-size: 18px;
 }
 
-@media screen and (max-width: 400px) {
+ @media screen and (max-width: 400px) {
     .main{
         width: 100%;
         padding-bottom: 0px;
@@ -260,22 +260,49 @@ body{
     color: #333;
     font-size: 40px;
     font-weight: normal;
-	}
-	.section2 p {
-		font-size: 25px;
+    }
+    .section2 p {
+        font-size: 25px;
     margin: 0 auto 10px auto;
-	}
-	.section2 h2 {
+    }
+    .section2 h2 {
     margin: 0 auto 10px auto;
-	}
+    }
     .cbp_tmlabel ul li{
         margin-right: 2px;
         font-size: 90%;
     }
     .cbp_tmlabel img {
     margin-bottom:0;
-	}
+    }
+}  
+
+@media screen and (max-height: 700px) {
+    .main{
+        width: 100%;
+        padding-bottom: 0px;
+    }
+    .section2 img {
+        size: 50%;
+    }
+  
+    .section2 p {
+        font-size: 25px;
+    margin: 0 auto 10px auto;
+    }
+    .section2 h2 {
+    margin: 0 auto 10px auto;
+    }
+    .cbp_tmlabel ul li{
+        margin-right: 2px;
+        font-size: 90%;
+    }
+    .cbp_tmlabel img {
+    margin-bottom:0;
+    width: 70%;
+   }
 }
+
 
 
 
@@ -333,3 +360,27 @@ body{
     margin-bottom:0;
 	}
 }
+@media screen and (max-height: 600px) {
+    .main{
+        width: 100%;
+        padding-bottom: 0px;
+    }
+    .section2 img {
+        size: 50%;
+    }
+   
+    .section2 p {
+        font-size: 25px;
+    margin: 0 auto 10px auto;
+    }
+    .section2 h2 {
+    margin: 0 auto 10px auto;
+    }
+    .cbp_tmlabel ul li{
+        margin-right: 2px;
+        font-size: 90%;
+    }
+    .cbp_tmlabel img {
+    margin-bottom:0;
+    width: 70%;
+   }
