@@ -8,6 +8,11 @@ body{
     overflow: hidden;
     text-align: center;
 }
+
+
+
+
+
 /*第一屏样式设置*/
 
 .section1{
@@ -39,17 +44,9 @@ body{
     opacity: .9;
 }
 
-/* 幻灯片css */
-/**
- *  Timeline.css
- */
 
-/* .slide > div{
-    width: 60%;
-    height: 60%;
 
-} */
-
+/* 内容模块 */
 
 .main a{
     color:#0085a1;
@@ -145,42 +142,7 @@ body{
 }
 
 /******* Hux Branch *****/
-html{
-    font-size: 90%;
-}
-body{
-    background: #fafafa;
-}
-header{
-    background: #6ca8fb;
-    text-align: center;
-    height: 620px;
-    min-width: 100%;
-    padding: 5em 0px !important;
-    position: relative;
-    border-bottom: 1px solid #edeeee;
-}
-header h1 {
-    font-size: 70px;
-    color: white;
-    font-weight: 100;
-    margin-top: 26px;
-    margin-bottom: 10px;
-    line-height: 1;
-    letter-spacing: 0.1em;
-}
-header p{
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    line-height: 1.6em;
-    letter-spacing: 1px;
-    font-weight: 300;
-    margin: 1.7em;
-}
-header img{
-    width: 190px;
-}
+
 
 .cbp_tmlabel .hux_ul{
     border:none;
@@ -259,23 +221,6 @@ header img{
     background: #eee;
 }
 
-@media screen and (max-width: 400px) {
-    .main{
-        width: 100%;
-        padding-bottom: 0px;
-    }
-    html{
-        font-size: 90%;
-    }
-    header p{
-        font-size: 1.05em;
-        letter-spacing: 0px;
-        margin: 1.5em;
-    }
-    .cbp_tmlabel ul li.skill>span, .cbp_tmlabel ul li.skill>a{
-        margin-right: 2px;
-    }
-}
 
 
 
@@ -291,17 +236,56 @@ header img{
     font-size: 50px;
     font-weight: normal;
 }
+.section2 p{
+    margin: 20px auto 0 1500px;
+    color: #333;
+    font-size: 18px;
+    width: 60%;
+    /*margin-left: 1500px;*/
+}
 .section2 a{
     display: block;
     margin: 20px auto 0;
     color: #08c;
     font-size: 18px;
 }
+
+@media screen and (max-width: 400px) {
+    .main{
+        width: 100%;
+        padding-bottom: 0px;
+    }
+    .section2 h1 {
+    margin: 5px auto 0;
+    color: #333;
+    font-size: 40px;
+    font-weight: normal;
+	}
+	.section2 p {
+		font-size: 25px;
+    margin: 0 auto 10px auto;
+	}
+	.section2 h2 {
+    margin: 0 auto 10px auto;
+	}
+    .cbp_tmlabel ul li{
+        margin-right: 2px;
+        font-size: 90%;
+    }
+    .cbp_tmlabel img {
+    margin-bottom:0;
+	}
+}
+
+
+
 /*第三屏样式设置*/
+
 .section3{
-    background: url("img/timekeeping_hero_large_2x.jpg")  center ;
+    background: url("img/timekeeping_hero_large_2x.jpg") no-repeat center;
     background-size: cover;
 }
+
 .section3 h1{
     margin: 20px auto 20px -1500px;
     color: white;
@@ -323,59 +307,29 @@ header img{
     color: #08c;
     font-size: 18px;
 }
-/*第四屏样式设置*/
-.section4 h1{
-    margin: 20px auto;
-    color: #333;
+
+@media screen and (max-width: 400px) {
+    .main{
+        width: 100%;
+        padding-bottom: 0px;
+    }
+    .section3 h1 {
+    margin: 5px auto 0;
+    color: white;
     font-size: 40px;
     font-weight: normal;
+	}
+	.section3 p {
+    margin: 0 auto 10px auto;
+	}
+	.section3 h2 {
+    margin: 0 auto 10px auto;
+	}
+    .cbp_tmlabel ul li{
+        margin-right: 2px;
+        font-size: 90%;
+    }
+    .cbp_tmlabel img {
+    margin-bottom:0;
+	}
 }
-.section4 .row{
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    color: #333;
-    font-size: 16px;
-}
-.section4 .column{
-    margin: 10px;
-    padding-bottom: 30px;
-    background-color: #f2f2f2;
-}
-.section4 .column img{
-    height: 300px;
-    margin-top: 30px;
-}
-.section4 .column h4{
-    margin: 20px auto;
-}
-.section4 .column h4.primary{
-    background-image: url("img/logo_collection_primary.svg");
-    background-size: 102px 22px;
-    width: 102px;
-    height: 22px;
-}
-.section4 .column h4.sport{
-    background-image: url("img/logo_collection_sport.svg");
-    background-size: 178px 22px;
-    width: 178px;
-    height: 22px;
-}
-.section4 .column h4.edition{
-    background-image: url("img/logo_collection_edition.svg");
-    background-size: 190px 22px;
-    width: 190px;
-    height: 22px;
-}
-.section4 .column p{
-    width: 90%;
-    margin: 10px auto;
-}
-.section4 .column a{
-    display: block;
-    margin: 10px auto 0;
-    color: #08c;
-}
-
