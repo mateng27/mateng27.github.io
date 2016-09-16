@@ -15,6 +15,7 @@ $(document).ready(function(){
                     break;
                 case 2:
                     move('.section2 h1').scale(0.7).end();
+                    move('.section2 p').scale(0.7).end();
                     break;
                 case 3:
                     move('.section3 h1').set('margin-left','20%').end();
