@@ -85,7 +85,7 @@ gems: [jekyll-paginate]		 +gems: [jekyll-paginate
  -# Friends		
  -friends: [		
  -    {		
- -        title: "李笑来",		
+ -        title: "李笑来的博客",		
  -        href: "http://xiaolai.li/"		
  -    },{		
  -        title: "小土刀",		
