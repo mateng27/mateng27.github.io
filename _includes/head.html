@@ -1,20 +1,25 @@
 <head>
     <meta charset="utf-8">
-    <meta name="baidu-site-verification" content="WZH19cb1cF" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <meta name="keywords"  content="{{ site.keyword }}">
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
-
+    <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
+    
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
 
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
-
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/hux-blog.min.css" | prepend: site.baseurl }}">
@@ -25,7 +30,7 @@
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China
@@ -43,29 +48,5 @@
     <![endif]-->
 
     <!-- ga & ba script hoook -->
-    <!---baidu 搜索代码--->
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?de1ce458db68d7a3d74998a4cc6e6c4f";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    <!---baidu 转化代码--->
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?de1ce458db68d7a3d74998a4cc6e6c4f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
-    
-    
-    </script>
+    <script></script>
 </head>
