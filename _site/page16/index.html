@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <title>马腾的博客 | Teng Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/page16/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Teng Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/aboutme/"> about</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/list/">List</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Teng Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">世界那么大，其实都一样</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/2015/05/21/%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86-1-%E8%82%89%E7%9C%BC%E5%87%A1%E8%83%8E%E4%B8%8D%E8%AF%86%E7%9C%9F%E4%BD%9B/">
+        <h2 class="post-title">
+            【泰国杂忆-1】肉眼凡胎不识真佛
+        </h2>
+        
+        <div class="post-content-preview">
+            本来想着把这些文章换钱来着，希望不大，在这发了吧
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+肉眼凡胎不识真佛
+
+在大大小小的旅游网站上，对于泰国的介绍必不可少的就是千佛之国，黄袍之国。
+
+泰国街头，佛龛和寺庙完全是随处可见，甚至大有超过泰国人口数量的趋势。我甚至开始杞人忧天，泰国不大的国土上神灵那么多，每个神灵分配的领地能有多少呢？他们最多能佑...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on May 21, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2015/01/03/">
+        <h2 class="post-title">
+            孤独
+        </h2>
+        
+        <div class="post-content-preview">
+            终于和2014年年初没什么差别了，彻底的孤单，挺好
+
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on January 3, 2015
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/12/27/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%E7%9A%84%E8%AF%9D%E5%8F%AF%E4%BB%A5%E8%AE%A9%E4%BB%A5%E5%90%8E%E7%9A%84%E4%BD%A0%E7%9F%A5%E9%81%93%E4%BD%A0%E4%BB%A5%E5%89%8D%E5%B9%B2%E8%BF%87%E7%9A%84%E4%BA%8B%E6%83%85/">
+        <h2 class="post-title">
+            年终总结的话可以让以后的你知道你以前干过的事情
+        </h2>
+        
+        <div class="post-content-preview">
+            隔壁屋传来了学长的的歌声，真是很难听啊，学长对此的解释是“女愁苦，男愁唱”。
+
+我也是喜欢在敲字的时候随手打开一个歌单，慢慢酝酿一下伤感的情绪，不然还真是没有什么好说的。现在听的歌单就“有些人一别就是一生”，不过听起来一般。
+
+看看LOFTER的更新还是停留在十一月的某一天，这样下去的话只会导致我这个新博客的倒闭。从新浪到豆瓣，再到LOFTER，我可不想这么多的站点都要变成死寂的墓地。多多写...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on December 27, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/11/24/">
+        <h2 class="post-title">
+            沮丧
+        </h2>
+        
+        <div class="post-content-preview">
+            真是让人沮丧
+
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on November 24, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/11/11/%E7%BC%98%E8%B5%B7%E4%B8%8D%E6%98%93/">
+        <h2 class="post-title">
+            缘起不易
+        </h2>
+        
+        <div class="post-content-preview">
+            2014年2月，那还是一个不遥远的日子，不过仅仅几个月却给人的好久好久的感觉。
+
+那时候在吉林，心想终于有机会一闯东三省，谁想到是封闭集训。刚到日子里，除了感受东北的料峭，我更多的是在纠结到底是要在吉林培训还是要回家好好准备公务员面试。
+
+完全不同的两种道路，取其一虽不至于说与另一无缘，也是基本无望。我给同学打过电话，听取他们的意见；也自己深夜彻思，考虑自己是不是有勇气有决心来选择外出闯荡。...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on November 11, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/11/06/%E6%85%A2%E6%85%A2%E8%AF%B4-%E4%B8%80/">
+        <h2 class="post-title">
+            慢慢说（一）
+        </h2>
+        
+        <div class="post-content-preview">
+            我喜欢你
+
+我知道你喜欢我
+
+我知道你知道我喜欢你
+
+请问在这样的情况大家还要不要把话题挑明来说？
+
+当然！必须！
+
+仪式感是一种很重要的东西。每天都有那么多的事情发生，大多数是记不住，总是要一些特殊的行为来固话它，希望有些事可以记得更久一些。告诉别人我喜欢这样的事情自然值得慎重对待。
+
+不过我的问题总是出现在慎重太多，结果却是少了最后最重要的一步。
+
+11月4日，我还在考虑，不要老是打扰贝...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on November 6, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/11/04/">
+        <h2 class="post-title">
+            想家
+        </h2>
+        
+        <div class="post-content-preview">
+            只是有点想家
+
+只是有郁闷
+
+只是突然觉得很孤单
+
+只是有点······
+
+不过我是喜欢你的
+
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on November 4, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/10/29/">
+        <h2 class="post-title">
+            
+        </h2>
+        
+        <div class="post-content-preview">
+            不知道他们是否想起过我
+
+我不是一个喜欢整理的人，也没有处女座的强迫症，喜欢把东西归类；甚至都算是一个有点邋遢的人，收拾一次可以顶一星期。不过我 很少丢东西，不过是学校文件，证明，还是钥匙，硬币什么的，即便是随手放的东西，也很少不见了。
+
+我一直对这一点很自豪。
+
+不过旅行回来，我才发觉，我原来丢了很重要的东西，我那些喜欢过的人们呢，他们都丢了。
+
+他们要么现在在家乡做着一份不咸不淡的工作，...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on October 29, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/10/18/10.18%E6%9C%89%E6%84%9F/">
+        <h2 class="post-title">
+            10.18有感
+        </h2>
+        
+        <div class="post-content-preview">
+            感叹
+1.在学会尊重少数人的意愿前，中国不值得拥有民主
+2.永远不要小瞧人的见识，不要用自己的想法来考虑她人
+3.所以，也不要低估人的的恶，即便是无意识的恶
+
+4.跳蛋都知道了，服！
+
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on October 18, 2014
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2014/10/14/%E5%8D%81%E6%9C%88%E5%8D%81%E4%B8%89/">
+        <h2 class="post-title">
+            十月十三
+        </h2>
+        
+        <div class="post-content-preview">
+            一个人写自己不懂得的事就容易这样浪漫。 所以才会觉得别人的生活光鲜亮丽，其实不过是自己因为不了解的误解，坚持说处处皆生活才是正道。 当人自己搞懂一件事也是很难的，还是慢慢搞好自己的生活吧
+我最赞成罗素先生的一句话：“须知参差多态，乃是幸福的本源。”大多数的参差多态都是敏于思索的人创造出来的。当然，我知道有些人不赞成我们的意见。 以前老看第一句了，其实后一句才是重点，不是敏于思索的人，你的生活...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on October 14, 2014
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/page15">&larr; Newer Posts</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/page17">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                                <a href="/tags/#随想录" title="随想录" rel="101">
+                                    随想录
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#lofter" title="lofter" rel="55">
+                                    lofter
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#瞎扯" title="瞎扯" rel="46">
+                                    瞎扯
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#reading" title="reading" rel="22">
+                                    reading
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#泰国杂忆" title="泰国杂忆" rel="21">
+                                    泰国杂忆
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#感叹" title="感叹" rel="57">
+                                    感叹
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#电影" title="电影" rel="11">
+                                    电影
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#职场" title="职场" rel="21">
+                                    职场
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#笔记" title="笔记" rel="48">
+                                    笔记
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Thinking" title="Thinking" rel="71">
+                                    Thinking
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#感慨" title="感慨" rel="7">
+                                    感慨
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#生活" title="生活" rel="10">
+                                    生活
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#广告" title="广告" rel="3">
+                                    广告
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#博客" title="博客" rel="9">
+                                    博客
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#正经" title="正经" rel="11">
+                                    正经
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#读书" title="读书" rel="18">
+                                    读书
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#编程" title="编程" rel="13">
+                                    编程
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Learning" title="Learning" rel="20">
+                                    Learning
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#原则" title="原则" rel="7">
+                                    原则
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#Reading" title="Reading" rel="9">
+                                    Reading
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#TED" title="TED" rel="2">
+                                    TED
+                                </a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                <a href="/tags/#产品" title="产品" rel="11">
+                                    产品
+                                </a>
+                            
+                        
+                            
+                                <a href="/tags/#学习" title="学习" rel="10">
+                                    学习
+                                </a>
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="/img/avatar-hux.jpg" />
+                        
+                        
+                            <p>世事无常，精进不已是惟一靠谱的人生策略。</p>
+                        
+
+
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            <li>
+                                <a href="/feed.xml">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+
+
+                             <!-- add lofter,ins by teng, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="http://instagram.com/lovemadao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                        
+                    <li>
+                        <a target="_blank" href="http://www.jianshu.com/users/erLDs1/latest_articles">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-lofter fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                            
+                            
+                            
+                            
+                            <li>
+                                <a target="_blank" href="http://weibo.com/yanchufei">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://xiaolai.li/">李笑来的博客</a></li>
+                    
+                        <li><a href="http://wdxtub.com/">小土刀</a></li>
+                    
+                        <li><a href="http://mindhacks.cn">暗时间</a></li>
+                    
+                        <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+                    
+                        <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+                    
+                        <li><a href="http://zwb.io/">一肩月光</a></li>
+                    
+                        <li><a href="https://perhapslove.github.io/">初尘的博客</a></li>
+                    
+                        <li><a href="https://codeboy.me/">小胖轩</a></li>
+                    
+                        <li><a href="http://brucezhaor.github.io/">Bruce Zhao's Blog</a></li>
+                    
+                        <li><a href="http://geno1024.com/">Geno1024的博客</a></li>
+                    
+                        <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+                    
+                        <li><a href="https://www.instagram.com/lovemadao/">马腾的INS</a></li>
+                    
+                        <li><a href="http://toutiao.com/m4935743317/">娱乐大嘴鱼</a></li>
+                    
+                </ul>
+                
+    		</div>
+        
+	</div>
+</div>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+ 					 <!--
+                    
+                    -->
+
+                    <!-- add lofter,ins by teng, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="http://instagram.com/lovemadao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                     
+
+                     <!-- add lofter,ins by teng, add target = "_blank" to <a> by Hux -->
+                    
+
+                       
+                    <li>
+                        <a target="_blank" href="http://www.jianshu.com/users/erLDs1/latest_articles">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-lofter fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/yanchufei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    
+
+                  </ul>
+                  <p class="copyright text-muted">
+                      Copyright &copy; Teng Blog 2016
+                      <br>
+                      Write by <a href="http://weibo.com/yanchufei">Teng</a> | 对世界保持学习力
+
+                  </p>
+              </div>
+          </div>
+      </div>
+
+
+  </footer>
+  <!-- jQuery -->
+  <script src="/js/jquery.min.js "></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js/bootstrap.min.js "></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/js/hux-blog.min.js "></script>
+
+
+  <!-- async load function -->
+  <script>
+      function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+      }
+  </script>
+
+  <!--
+       Because of the native support for backtick-style fenced code blocks
+       right within the Markdown is landed in Github Pages,
+       From V1.6, There is no need for Highlight.js,
+       so Huxblog drops it officially.
+       - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+       - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+       - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+  -->
+  <!--
+      <script>
+          async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+              hljs.initHighlightingOnLoad();
+          })
+      </script>
+      <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+  -->
+
+
+  <!-- jquery.tagcloud.js -->
+  <script>
+      // only load tagcloud.js in tag.html
+      if($('#tag_cloud').length !== 0){
+          async('/js/jquery.tagcloud.js',function(){
+              $.fn.tagcloud.defaults = {
+                  //size: {start: 1, end: 1, unit: 'em'},
+                  color: {start: '#bbbbee', end: '#0085a1'},
+              };
+              $('#tag_cloud a').tagcloud();
+          })
+      }
+  </script>
+
+  <!--fastClick.js -->
+  <script>
+      async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+          var $nav = document.querySelector("nav");
+          if($nav) FastClick.attach($nav);
+      })
+  </script>
+
+
+  <!-- Google Analytics -->
+  
+  <script>
+      // dynamic User by Hux
+      var _gaId = 'UA-79793350-1';
+      var _gaDomain = 'tengblog.com';
+      // Originial
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', _gaId, _gaDomain);
+      ga('send', 'pageview');
+  </script>
+  
+
+
+  <!-- Baidu Tongji -->
+  
+  <script>
+      // dynamic User by Hux
+      var _baId = 'de1ce458db68d7a3d74998a4cc6e6c4f';
+      // Originial
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+
+
+  <!-- Side Catalog -->
+  
+
+  <!-- Highlight.js -->
+  <script>
+      async("//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js",function(){
+          hljs.initHighlightingOnLoad();
+      })
+  </script>
+
+<link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/github.min.css" rel="stylesheet">
+
+
+
+  <!-- search -->
+<div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px"
+           placeholder="文章标题 日期 标签"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="双击ctrl试一下"/>
+</div>
+
+<link rel="stylesheet" href="/search/css/cb-search.css">
+
+<script src="/search/js/bootstrap3-typeahead.min.js"></script>
+<script src="/search/js/cb-search.js"></script>
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <title>书籍卡片反馈|缩写[技能树] - 马腾的博客 | Teng Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2016/10/07/suoxie/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Teng Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/aboutme/"> about</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/archives/">Archives</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/list/">List</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-xuexi.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-xuexi.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Thinking" title="Thinking">Thinking</a>
+                        
+                        <a class="tag" href="/tags/#产品" title="产品">产品</a>
+                        
+                        <a class="tag" href="/tags/#学习" title="学习">学习</a>
+                        
+                        <a class="tag" href="/tags/#职场" title="职场">职场</a>
+                        
+                    </div>
+                    <h1>书籍卡片反馈|缩写[技能树]</h1>
+                    
+                    
+                    <h2 class="subheading">点亮阅读技能树</h2>
+                    
+                    <span class="meta">Posted by Teng on October 7, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>9月帮熊猫学院拆写了《精进》一书，然后编辑发送了我相关的反馈。在此记录下，以及一些对读书社群的想法。</p>
+</blockquote>
+
+<h2 id="section">阅读社群的兴起</h2>
+
+<p>社群在兴起，读书社群就是一个代表。阅读的焦虑让人们不断寻求更快速的读书方式，帮助大家快速阅读的社群也风生水起，不管微信公众号十点读书、熊猫学院还是音频版的樊登读书会，大家做的都是一件事。</p>
+
+<p><strong>帮助受众了解一本书的精华，节约大家时间</strong></p>
+
+<p>不管是同读一本书，还是文字卡片缩写，还是音频缩写朗读，大家都是基于几个前提：</p>
+
+<ul>
+  <li>我们需要读书</li>
+  <li>大家读书的时间并不多</li>
+  <li>概略式的阅读可以获取书籍的有效信息</li>
+</ul>
+
+<p>这是众多读书社群存在的前提，然后便是大家组织形式和督促形式上的细微差别了。我对这些保持<strong>谨慎的乐观</strong>。</p>
+
+<h2 id="section-1">缩写的得与失</h2>
+
+<p>卡片式缩写是熊猫学院采用的方式，一周一本书，经过专人阅读拆写成卡片，然后监督大家学习阅读。对时间紧，没什么动力看书的人来讲，这是个不错的方式，也确实可以帮助大家快速了解一本书，并建立相关的常识。</p>
+
+<p>不过对看书的人来讲，这样似乎又有点不足。几万字的缩写到底能不能完全呈现出原本书的内容，甚至丢弃了书中大量的素材，这都是问题。我可以确信的是，卡片式的缩写对缩写人的收获是巨大的。拆书人通过全书，不断取舍，找出中间最重要的内容，然后拆写出来，这倒是个不错的转写能力。</p>
+
+<p>字数是限制更多内容呈现的原因。一本六十万，400页的《沟通的艺术》拆卸成几万的卡片式文稿，或者是几千字的音频口稿，这其中的流失不容小看。</p>
+
+<p>不过，这样的方式总比一本书也不看的好。无胜于少，所以这样的社群自然是好书，也事会发展下去的基础。</p>
+
+<h2 id="section-2">《精进》反馈</h2>
+
+<p>具体说到《精进》一书，读者也给我的拆写众多反馈，获益良多，记录于此。有人说实用，有人说不适用，这样的两极评论很正常。毕竟一本书不能完全知道你的行事准则，需要的是读者自己根据生活做出改变。</p>
+
+<p>一次的鸡血没有办法改变实际情况。</p>
+
+<p><strong>读者反馈</strong></p>
+
+<ul>
+  <li>上本书《拖延心理学》聪头制作的学习卡片学习起来效率高效果好，因为阐述很清楚，举例也很鲜活，而《自控力》和《精进》这两本书的卡片可能过于考虑精简字数有些问题解释不太清楚，望改进</li>
+  <li>不喜欢，相对前两本书，这本都不下去</li>
+  <li>不大实用，启发不大</li>
+  <li>今天的卡片内容总是显示不完全～</li>
+  <li>值得品读</li>
+  <li>具体可操作性的内容，措施没有。与他的醒目的标题，有差距。我一直想成为一个很厉害的人，在某方面有成果，但是我找不到方法在这书里边，目前来说。</li>
+  <li>内容概括的很好，能受用</li>
+  <li>在意识方向把控上给予指导，希望可以找几个实际案例，或者是可以落地执行的策略。
+太概括了</li>
+  <li>如何向自己提问呢？</li>
+  <li>学习的目的是学习知识而不是看了多少本书，个人觉得现在看书进度快，而且内容压缩太多。建议两周看一本书，每天学习内容再加一倍。</li>
+  <li>实用性不强，看着较为乏味</li>
+  <li>实用性很强！</li>
+  <li>对我非常有帮助</li>
+  <li>希望读一些有意思的书</li>
+  <li>很有实用性！</li>
+  <li>循序渐进</li>
+  <li>怎样做出呢？选择总结得不错，图解那一部分还是没怎么懂，需要更加精细的研究</li>
+  <li>我看过原作，认为此书剖析的很细致，且作者博览群书，能给我带来很多启发。这些启发- 也是有可执行性的，推荐此书！</li>
+  <li>我要制定自己的最高目标</li>
+  <li>我觉得有些东西太深奥了。我有些反而看不懂</li>
+  <li>我觉得这本书对我当下很有用，因为每做一件事情都三分热度，不能够沉下心来踏踏实实的把每一件事情做的完美，老板说工作是一门艺术，而很多人觉得我只是发一份工而已。</li>
+  <li>我觉得这本书，非常棒，对我有很大帮助</li>
+  <li>我读完这本书受益很多，懂得了如何选择人生，懂得了只要努力就能超越！</li>
+  <li>收获不少，努力继续学习下去</li>
+  <li>文章中还是有很多值得学习的东西，有些专有名词可以适当举些例子进行解释</li>
+  <li>根据作者建议提炼出计划表，大家能每天填写，然后互相监督，共同成长。</li>
+  <li>比上一本书要好懂的多了，可能是因为采铜是中国人，文章不需要翻译吧！还有就是引用材料新鲜，竟然把热点新闻“王宝强”放入垃圾桶，大赞！</li>
+  <li>没读完不完全</li>
+  <li>理念没问题。主要是能不能照着去做。</li>
+  <li>第一次意识到格局观，最高的格局观亦是那句那句我们误以为的老生常谈，</li>
+  <li>实现个人价值与社会价值的统一。值得思考！</li>
+  <li>老师，今天学习的内容里有两个章节没有呀 。</li>
+  <li>能让自己改变工作习惯，让我的思想和行为改变了</li>
+  <li>讲的不够详细，比如图层法，具体是什么？怎么做！举例子之类的</li>
+  <li>说的很好告诉我们做一件事，不要发愁，最重要的是开始行动而且要注意避免任务转换之间的消耗，最好把不同任务同一性质工作一起做，这样追求最大的消耗。</li>
+  <li>读到今天，我觉得这本书没有精彩内容。</li>
+  <li>这本书真得能给读者指明学习和生活提高的方向，但我个人觉得要是多些实例，对大家的实践以及深入思考会有更大促进。</li>
+  <li>这本书非常好，对自己的目标确立、为实现目标给了可操作的方法，写得非常具体、可圈可点。喜欢这本书。</li>
+  <li>里面有好多读不懂的</li>
+  <li>难得看进去。</li>
+</ul>
+
+
+<!-- zanshang -->
+<div>
+
+      
+</div>
+
+        <div>
+     
+	  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+	    <div>什么叫厚颜无耻？</div>
+	    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&#39;QR&#39;); if (qr.style.display === &#39;none&#39;) {qr.style.display=&#39;block&#39;;} else {qr.style.display=&#39;none&#39;}">
+	      <span>赏</span>
+	    </button>
+	    <div id="QR" style="display: none;">
+	      
+	        <div id="wechat" style="display: inline-block">
+	          <a href="/img/wechat.jpg" class="fancybox" rel="group"><img id="wechat_qr" src="/img/wechat.jpg" alt="WeChat Pay"></a>
+	          <p>微信打赏</p>
+	        </div>
+	      
+	      
+          </div>
+  </div>
+  
+
+
+      
+    </div>
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/10/07/suoxie"
+                    data-title="书籍卡片反馈|缩写[技能树]"
+                    data-url="http://localhost:4000/2016/10/07/suoxie/"
+                    data-images="http://localhost:4000/img/post-bg-xuexi.jpg"
+                    data-content="
+  9月帮熊猫学院拆写了《精进》一书，然后编辑发送了我相关的反馈。在此记录下，以及一些对读书社群的想法。
+
+
+阅读社群的兴起
+
+社群在兴起，读书社群就是... | 马腾的博客 | Teng Blog " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/10/07/meigonghe/" data-toggle="tooltip" data-placement="top" title="电影|国庆观影及《湄公河行动》">
+                        Previous<br>
+                        <span>电影|国庆观影及《湄公河行动》</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/10/12/tanpan/" data-toggle="tooltip" data-placement="top" title="需要一点谈判（二）">
+                        Next<br>
+                        <span>需要一点谈判（二）</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/10/07/suoxie"
+                        data-title="书籍卡片反馈|缩写[技能树]"
+                        data-url="http://localhost:4000/2016/10/07/suoxie/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+                				<a href="/tags/#随想录" title="随想录" rel="101">
+                                    随想录
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#lofter" title="lofter" rel="55">
+                                    lofter
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#瞎扯" title="瞎扯" rel="46">
+                                    瞎扯
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#reading" title="reading" rel="22">
+                                    reading
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#泰国杂忆" title="泰国杂忆" rel="21">
+                                    泰国杂忆
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#感叹" title="感叹" rel="57">
+                                    感叹
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#电影" title="电影" rel="11">
+                                    电影
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#职场" title="职场" rel="21">
+                                    职场
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#笔记" title="笔记" rel="48">
+                                    笔记
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Thinking" title="Thinking" rel="71">
+                                    Thinking
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#感慨" title="感慨" rel="7">
+                                    感慨
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#生活" title="生活" rel="10">
+                                    生活
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#广告" title="广告" rel="3">
+                                    广告
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#博客" title="博客" rel="9">
+                                    博客
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#正经" title="正经" rel="11">
+                                    正经
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#读书" title="读书" rel="18">
+                                    读书
+                                </a>
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#编程" title="编程" rel="13">
+                                    编程
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Learning" title="Learning" rel="20">
+                                    Learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#原则" title="原则" rel="7">
+                                    原则
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Reading" title="Reading" rel="9">
+                                    Reading
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#TED" title="TED" rel="2">
+                                    TED
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/tags/#产品" title="产品" rel="11">
+                                    产品
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#学习" title="学习" rel="10">
+                                    学习
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://xiaolai.li/">李笑来的博客</a></li>
+                    
+                        <li><a href="http://wdxtub.com/">小土刀</a></li>
+                    
+                        <li><a href="http://mindhacks.cn">暗时间</a></li>
+                    
+                        <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+                    
+                        <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+                    
+                        <li><a href="http://zwb.io/">一肩月光</a></li>
+                    
+                        <li><a href="https://perhapslove.github.io/">初尘的博客</a></li>
+                    
+                        <li><a href="https://codeboy.me/">小胖轩</a></li>
+                    
+                        <li><a href="http://brucezhaor.github.io/">Bruce Zhao's Blog</a></li>
+                    
+                        <li><a href="http://geno1024.com/">Geno1024的博客</a></li>
+                    
+                        <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+                    
+                        <li><a href="https://www.instagram.com/lovemadao/">马腾的INS</a></li>
+                    
+                        <li><a href="http://toutiao.com/m4935743317/">娱乐大嘴鱼</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'tengblog27';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+ 					 <!--
+                    
+                    -->
+
+                    <!-- add lofter,ins by teng, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="http://instagram.com/lovemadao">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                     
+
+                     <!-- add lofter,ins by teng, add target = "_blank" to <a> by Hux -->
+                    
+
+                       
+                    <li>
+                        <a target="_blank" href="http://www.jianshu.com/users/erLDs1/latest_articles">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-lofter fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/yanchufei">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    
+                    
+
+                  </ul>
+                  <p class="copyright text-muted">
+                      Copyright &copy; Teng Blog 2016
+                      <br>
+                      Write by <a href="http://weibo.com/yanchufei">Teng</a> | 对世界保持学习力
+
+                  </p>
+              </div>
+          </div>
+      </div>
+
+
+  </footer>
+  <!-- jQuery -->
+  <script src="/js/jquery.min.js "></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/js/bootstrap.min.js "></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/js/hux-blog.min.js "></script>
+
+
+  <!-- async load function -->
+  <script>
+      function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+      }
+  </script>
+
+  <!--
+       Because of the native support for backtick-style fenced code blocks
+       right within the Markdown is landed in Github Pages,
+       From V1.6, There is no need for Highlight.js,
+       so Huxblog drops it officially.
+       - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+       - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+       - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+  -->
+  <!--
+      <script>
+          async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+              hljs.initHighlightingOnLoad();
+          })
+      </script>
+      <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+  -->
+
+
+  <!-- jquery.tagcloud.js -->
+  <script>
+      // only load tagcloud.js in tag.html
+      if($('#tag_cloud').length !== 0){
+          async('/js/jquery.tagcloud.js',function(){
+              $.fn.tagcloud.defaults = {
+                  //size: {start: 1, end: 1, unit: 'em'},
+                  color: {start: '#bbbbee', end: '#0085a1'},
+              };
+              $('#tag_cloud a').tagcloud();
+          })
+      }
+  </script>
+
+  <!--fastClick.js -->
+  <script>
+      async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+          var $nav = document.querySelector("nav");
+          if($nav) FastClick.attach($nav);
+      })
+  </script>
+
+
+  <!-- Google Analytics -->
+  
+  <script>
+      // dynamic User by Hux
+      var _gaId = 'UA-79793350-1';
+      var _gaDomain = 'tengblog.com';
+      // Originial
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', _gaId, _gaDomain);
+      ga('send', 'pageview');
+  </script>
+  
+
+
+  <!-- Baidu Tongji -->
+  
+  <script>
+      // dynamic User by Hux
+      var _baId = 'de1ce458db68d7a3d74998a4cc6e6c4f';
+      // Originial
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+
+
+  <!-- Side Catalog -->
+  
+  <script type="text/javascript">
+      function generateCatalog (selector) {
+          var P = $('div.post-container'),a,n,t,l,i,c;
+          a = P.find('h1,h2,h3,h4,h5,h6');
+          a.each(function () {
+              n = $(this).prop('tagName').toLowerCase();
+              i = "#"+$(this).prop('id');
+              t = $(this).text();
+              c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+              l = $('<li class="'+n+'_nav"></li>').append(c);
+              $(selector).append(l);
+          });
+          return true;
+      }
+      generateCatalog(".catalog-body");
+      // toggle side catalog
+      $(".catalog-toggle").click((function(e){
+          e.preventDefault();
+          $('.side-catalog').toggleClass("fold")
+      }))
+      /*
+       * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+       * Fork by Hux to support padding
+       */
+      async("/js/jquery.nav.js", function () {
+          $('.catalog-body').onePageNav({
+              currentClass: "active",
+              changeHash: !1,
+              easing: "swing",
+              filter: "",
+              scrollSpeed: 700,
+              scrollOffset: 0,
+              scrollThreshold: .2,
+              begin: null,
+              end: null,
+              scrollChange: null,
+              padding: 80
+          });
+      });
+  </script>
+  
+
+  <!-- Highlight.js -->
+  <script>
+      async("//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js",function(){
+          hljs.initHighlightingOnLoad();
+      })
+  </script>
+
+<link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/github.min.css" rel="stylesheet">
+
+
+
+  <!-- search -->
+<div class="search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
+      opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
+    <input type="text" class="form-control search-content" id="search-content" style="position: fixed; top: 60px"
+           placeholder="文章标题 日期 标签"
+           >
+
+    <div style="position: fixed; top: 16px; right: 16px;">
+        <img src="/search/img/cb-close.png"  id="close-btn"/>
+    </div>
+</div>
+
+<div style="position: fixed; right: 16px; bottom: 20px;">
+    <img src="/search/img/cb-search.png"  id="search-btn"  title="双击ctrl试一下"/>
+</div>
+
+<link rel="stylesheet" href="/search/css/cb-search.css">
+
+<script src="/search/js/bootstrap3-typeahead.min.js"></script>
+<script src="/search/js/cb-search.js"></script>
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
