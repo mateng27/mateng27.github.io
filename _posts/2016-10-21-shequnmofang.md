@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "PPT为什么要模仿？| 社群 [技能树]"
-subtitle:   "新书介绍"
+subtitle:   "自己给自己挖的有一个坑"
 date:       2016-10-21
 author:     "Teng"
 header-img: "img/post-bg-xuexi.jpg"
