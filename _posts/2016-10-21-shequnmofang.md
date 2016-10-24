@@ -4,7 +4,7 @@ title:      "PPT为什么要模仿？| 社群 [技能树]"
 subtitle:   "新书介绍"
 date:       2016-10-21
 author:     "Teng"
-header-img: "img/post-bg-book.jpg"
+header-img: "img/post-bg-xuexi.jpg"
 catalog: true
 tags:
     - Thinking
