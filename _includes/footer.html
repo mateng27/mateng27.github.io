@@ -36,6 +36,17 @@
                         </a>
                     </li>
                     {% endif %}
+                     <!-- add linkedin  by teng, add target = "_blank" to <a> by Hux -->
+                    {% if site.linkedin_username %}
+                    <li>
+                        <a target="_blank" href="https://cn.linkedin.com/in/{{ site.instagram_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
 
                      {% if site.twitter_username %}
                     <li>
