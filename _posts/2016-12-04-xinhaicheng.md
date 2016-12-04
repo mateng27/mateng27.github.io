@@ -3,7 +3,8 @@ layout:     post
 title:      "「你的」完美和「修罗」的暗黑"
 subtitle:   "电影结局还是美好一点"
 date:       2016-12-04
-author:     "Teng"dianying.jpg"
+author:     "Teng"
+header-img: "img/post-bg-dianying.jpg"
 catalog: true
 tags:
     - 随想录
