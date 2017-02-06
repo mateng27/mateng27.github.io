@@ -4,7 +4,7 @@ title:      "狼人杀初试小结"
 subtitle:   "这个游戏很好玩，模拟人生"
 date:       2017-02-06
 author:     "Teng"
-header-img: "img/post-bg-jianpan.jpg"
+header-img: "img/post-bg-gongju.jpg"
 catalog: true
 tags:
 - 随想录
