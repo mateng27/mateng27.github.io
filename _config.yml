@@ -57,9 +57,9 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: tengblog27
+#duoshuo_username: tengblog27
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 
@@ -96,9 +96,6 @@ service-worker: true
 # Friends
 friends: [    
     {   
-        title: "李笑来的博客",    
-        href: "http://xiaolai.li/"    
-    },{   
         title: "小土刀",   
         href: "http://wdxtub.com/"    
     },{   
@@ -131,9 +128,6 @@ friends: [
     },{   
         title: "马腾的INS",    
         href: "https://www.instagram.com/lovemadao/"    
-    },{   
-        title: "娱乐大嘴鱼",   
-        href: "http://toutiao.com/m4935743317/"   
     } 
 ]
 
