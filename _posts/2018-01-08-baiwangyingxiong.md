@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "关于百万英雄的瞎想"
-subtitle:   "用闪念胶囊发微博确实方面"
+subtitle:   "用闪念胶囊发微博确实方便"
 date:       2018-01-08
 author:     "Teng"
 header-img: "img/post-bg-suixiang.jpg"
