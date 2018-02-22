@@ -1,0 +1,24 @@
+---
+layout:     post
+title:      "微观、中观和宏观视角-产品思维"
+subtitle:   "一个课程的笔记"
+date:       2018-02-24
+author:     "Teng"
+header-img: "img/post-bg-suixiang.jpg"
+tags:
+- 产品
+- 学习
+- 笔记
+- 读书
+---
+
+
+
+
+
+
+
+
+
+
+
