@@ -8,8 +8,8 @@ header-img: "img/home-bg.jpg"
 <!-- Language Selector -->
 <select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
 
-    <option value="0" selected>ABOUT </option>
-    <option value="1"> 闲言碎语 </option>
+    <option value="0" selected>闲言碎语</option>
+    <option value="1"> ABOUT </option>
     
 </select>
 
@@ -59,13 +59,13 @@ header-img: "img/home-bg.jpg"
         var _hash = window.location.hash;
         // en
         if(_hash == "#en"){
-            $select.selectedIndex = 1;
+            $select.selectedIndex = 0;
             $en.style.display = "block";
             $zh.style.display = "none";
         // zh by default
         }else{
             // not trigger onChange, otherwise cause a loop call.
-            $select.selectedIndex = 0;
+            $select.selectedIndex = 1;
             $zh.style.display = "block";
             $en.style.display = "none";
         }
