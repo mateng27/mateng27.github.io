@@ -97,7 +97,7 @@ service-worker: true
 friends: [    
     {   
         title: "小土刀",   
-        href: "http://wdxtub.com/"    
+        href: "https://wdxmzy.com/"    
     },{   
         title: "暗时间",   
         href: "http://mindhacks.cn"   
