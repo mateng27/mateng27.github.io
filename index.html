@@ -1,93 +1,18 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Teng - Home page of MaTeng</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
-</head>
+---
+layout: page
+description: "世事无常，精进不已"
+---
 
-<body>
-<div class="vi">
-    <div class="sidebar">
-        <div class="header">
-            <h1>TENG</h1>
-            <div class="quote">
-                <p class="quote-text animate-init">The universe reveals its secrets to those that dare to follow their hearts.</p>
-                <p class="quote-author animate-init"> —— <strong>Ralph Smart</strong></p>
-            </div>
-        </div>
-        <div class="menu">
-            <a href="http://tengblog.cn" class="animate-init">Web</a>
-            <a href="http://notes.tengblog.com" class="animate-init">Notes</a>
-            <a href="https://www.instagram.com/lovemadao/" class="animate-init">Instagram</a>
-            <a href="http://weibo.com/yan_chufei" class="animate-init">WeiBo</a>
-            <p>
-                <a href="http://notes.tengblog.com" class="animate-init">
-                    人生奥义·精进不已
-                </a>
-            </p>
-        </div>
-        <div class="location">
-            <i class="location-icon"></i>
-            <span class="location-text animate-init">BeiJing - China</span>
-        </div>
-        <div class="relocating">
-            Navigating to: <span class="relocate-location"></span>...
-        </div>
-    </div>
-
-    <div class="content">
-        <span class="close">close</span>
-    </div>
-</div>
-<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
-<script>
-    $(document).ready(function () {
-        var delay = 1;
-        var DELAY_STEP = 200;
-        var animationOptions = { opacity: 1, top: 0};
-
-        $('h1').animate(animationOptions).promise()
-                .pipe(animateMain)
-                .pipe(animateLocationIcon);
-
-        function animateMain() {
-            var dfd = $.Deferred();
-            var els = $('.animate-init');
-            var size = els.size();
-
-            els.each(function (index, el) {
-                delay++;
-                $(el).delay(index * DELAY_STEP)
-                        .animate(animationOptions);
-                (size - 1 === index) && dfd.resolve();
-            });
-            return dfd.promise();
-        }
-
-        function animateLocationIcon() {
-            $('.location-icon').delay(delay * DELAY_STEP).animate({
-                opacity: 1,
-                top: 0
-            }).promise().done(animationQuote);
-        }
-
-        function animationQuote() {}
-
-        $(document.body).on('keydown', function (event) {
-            // Press 'b' key
-            if (event.which === 66) {
-                $('.relocate-location').text('Bookmark Page');
-                $('.relocating').css('opacity', 1);
-
-                window.setTimeout(function () {
-                    window.location.href = '/bookmarks.html';
-                }, 1000);
-            }
-        });
-    });
-</script>
-</body>
-</html>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
