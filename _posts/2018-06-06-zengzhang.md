@@ -3,6 +3,7 @@ layout:     post
 title:      "「增长黑客」读书笔记"
 subtitle:   "把你创造的东西推销出去"
 date:       2018-06-08
+catalog:    true
 author:     "Teng"
 header-img: "img/iphone-bg.jpg"
 tags:
