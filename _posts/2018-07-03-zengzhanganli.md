@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "增长才是第一生产力"
-subtitle:   "一次认真地敢看和产品看衰"
+subtitle:   "一次认真地分析和产品看衰"
 date:       2018-07-03
 catalog:    true
 author:     "Teng"
