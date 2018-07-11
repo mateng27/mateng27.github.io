@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      "《推荐系统实践》摘要"
-subtitle:   "一次认真地分析和产品看衰"
-date:       2018-07-011
+subtitle:   "读书笔记"
+date:       2018-07-11
 catalog:    true
 author:     "Teng"
 header-img: "img/iphone-bg.jpg"
