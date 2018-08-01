@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "雄性是在衰落，但不是因为游戏、色情"
-subtitle:   "因为不进化"
+title:      "雄性是在衰落"
+subtitle:   "但不是因为游戏、色情，而是因为不进化"
 date:       2018-08-01
 catalog:    true
 author:     "Teng"
