@@ -65,12 +65,12 @@ kramdown:
 
 
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 ba_track_id: de1ce458db68d7a3d74998a4cc6e6c4f
 
 # Google Analytics
 ga_track_id: 'UA-79793350-1'            # Format: UA-xxxxxx-xx
-ga_domain: tengblog.com 
+ga_domain: tengblog.com
 
 
 
@@ -94,40 +94,39 @@ service-worker: true
 
 
 # Friends
-friends: [    
-    {   
-        title: "小土刀",   
-        href: "http://wdxtub.com/"    
-    },{   
-        title: "暗时间",   
-        href: "http://mindhacks.cn"   
-    },{   
-        title: "前端-为网而生",   
-       href: "http://beforweb.com/front-end"    
-    },{   
-        title: "黄玄的博客",   
-        href: "http://huangxuan.me"   
-    },{   
-        title: "一肩月光",    
-        href: "http://zwb.io/"    
-    },{   
-        title: "初尘的博客",   
-        href: "https://perhapslove.github.io/"    
-    },{   
-        title: "小胖轩",   
-        href: "https://codeboy.me/"   
-    },{   
-        title: "Bruce Zhao's Blog",   
-        href: "http://brucezhaor.github.io/"    
-    },{   
-        title: "Geno1024的博客",   
-        href: "http://geno1024.com/"    
-    },{   
-        title: "马腾的lofter",   
-        href: "http://matengteng.lofter.com"    
-    },{   
-        title: "马腾的INS",    
-        href: "https://www.instagram.com/lovemadao/"    
-    } 
+friends: [
+    {
+        title: "小土刀",
+        href: "http://wdxtub.com/"
+    },{
+        title: "暗时间",
+        href: "http://mindhacks.cn"
+    },{
+        title: "前端-为网而生",
+       href: "http://beforweb.com/front-end"
+    },{
+        title: "黄玄的博客",
+        href: "http://huangxuan.me"
+    },{
+        title: "一肩月光",
+        href: "http://zwb.io/"
+    },{
+        title: "初尘的博客",
+        href: "https://perhapslove.github.io/"
+    },{
+        title: "小胖轩",
+        href: "https://codeboy.me/"
+    },{
+        title: "Bruce Zhao's Blog",
+        href: "http://brucezhaor.github.io/"
+    },{
+        title: "Geno1024的博客",
+        href: "http://geno1024.com/"
+    },{
+        title: "马腾的lofter",
+        href: "http://matengteng.lofter.com"
+    },{
+        title: "马腾的INS",
+        href: "https://www.instagram.com/lovemadao/"
+    }
 ]
-
