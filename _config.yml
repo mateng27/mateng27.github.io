@@ -1,29 +1,24 @@
 # Site settings
-title: Teng Blog
-SEOTitle: 马腾博客 | Teng Blog
+title: Hux Blog
+SEOTitle: 黄玄的博客 | Hux Blog
 header-img: img/home-bg.jpg
-email: matengteng@foxmail.com
-description: "关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。"
-keyword: "马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告"
-url: "http://tengblog.com"              # your host, for absolute URL
+email: huxpro@gmail.com
+description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
+keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
+url: "https://huangxuan.me"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-
-
-# add sreach
-search: true
+# Publish posts or collection documents with a future date.
+future: true
 
 # SNS settings
-RSS: true
-weibo_username: yanchufei
-instagram_username: lovemadao
-#jianshu_username: erLDs1
-linkedin_username: mayongtao
-#zhihu_username: lengli
-#github_username: mateng27
-#twitter_username: tteng27
-#facebook_username: tengteng27
-#lofter_username: matengteng
+RSS: false
+weibo_username:     huxpro
+zhihu_username:     huxpro
+github_username:    huxpro
+twitter_username:   huxpro
+#facebook_username:  huxpro
+#linkedin_username:  firstname-lastname-idxxxx
 
 
 
@@ -34,12 +29,16 @@ permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
 
 
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
 
 
 
@@ -50,34 +49,37 @@ gems: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: hux
 
-# Duoshuo settings
-#duoshuo_username: tengblog27
-# Share component is depend on Comment so we can NOT use share only.
-#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
+# Netease settings
+netease_comment: false
 
 
 
 # Analytics settings
-# Baidu Analytics
-ba_track_id: de1ce458db68d7a3d74998a4cc6e6c4f
+# Baidu Analytics 
+# ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-79793350-1'            # Format: UA-xxxxxx-xx
-ga_domain: tengblog.com
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "世事无常，精进不已是惟一靠谱的人生策略。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "For the next quantum leap<br>离开世界之前，一切都是过程"
+sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -93,37 +95,45 @@ service-worker: true
 
 
 
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
 # Friends
 friends: [
     {
-        title: "小土刀",
-        href: "http://wdxtub.com/"
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "乱序",
+        href: "http://mida.re/"
     },{
-        title: "暗时间",
-        href: "http://mindhacks.cn"
+        title: "前端外刊评论",
+        href: "http://qianduan.guru/"
     },{
-        title: "前端-为网而生",
-       href: "http://beforweb.com/front-end"
+        title: "天镶的博客",
+        href: "http://lingyu.wang/"
     },{
-        title: "黄玄的博客",
-        href: "http://huangxuan.me"
+        title: "Luke 的自留地",
+        href: "http://hmqk1995.github.io"
     },{
-        title: "一肩月光",
-        href: "http://zwb.io/"
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
     },{
-        title: "初尘的博客",
-        href: "https://perhapslove.github.io/"
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
     },{
-        title: "小胖轩",
-        href: "https://codeboy.me/"
+        title: "David's Game",
+        href: "https://www.ruoyaowu.com/"
     },{
-        title: "Bruce Zhao's Blog",
-        href: "http://brucezhaor.github.io/"
+        title: "DHong Say",
+        href: "http://dhong.co"
     },{
-        title: "Geno1024的博客",
-        href: "http://geno1024.com/"
+        title: "尹峰以为",
+        href: "http://ingf.github.io/"
     },{
-        title: "马腾的lofter",
-        href: "http://matengteng.lofter.com"
+        title: "解旻的博客",
+        href: "http://xieminis.me/"
     }
 ]
