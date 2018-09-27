@@ -1,5 +1,5 @@
 {% comment %}
-    @param {Boolean} center 
+    @param {Boolean} center
 {% endcomment %}
 
 {% if include.center %}
@@ -21,6 +21,26 @@
   {% if site.twitter_username %}
   <li>
     <a href="https://twitter.com/{{ site.twitter_username }}">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  {% endif %}
+  {% if site.ins_username %}
+  <li>
+    <a href="https://www.instagram.com/{{ site.twitter_username }}">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  {% endif %}
+  {% if site.lofter_username %}
+  <li>
+    <a href="http://www.lofter.com/blog/{{ site.twitter_username }}">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x"></i>
         <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
