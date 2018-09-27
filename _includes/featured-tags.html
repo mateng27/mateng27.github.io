@@ -1,9 +1,10 @@
 {% comment %}
-    @param {boolean} bottom - bottom will render <hr> 
+    @param {boolean} bottom - bottom will render <hr>
 {% endcomment %}
 
 {% if site.featured-tags %}
 <section>
+  <hr>
     {% if include.bottom %}
         <hr class="hidden-sm hidden-xs">
     {% endif %}
@@ -14,7 +15,7 @@
             there must be no space between for and if otherwise this tricky sort won't work.
         {% endcomment %}
         {% for tag in site.tags %}{% if tag[1].size > site.featured-condition-size %}
-                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}" 
+                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
                     href="{{ site.baseurl }}/archive/?tag={{ tag[0] | url_encode }}"
                     title="{{ tag[0] }}"
                     rel="{{ tag[1].size }}">{{ tag[0] }}
