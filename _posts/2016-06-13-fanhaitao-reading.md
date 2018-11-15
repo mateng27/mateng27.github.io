@@ -7,7 +7,7 @@ author:     "Teng"
 header-img: "img/post-bg-tuwei.jpg"
 catalog: true
 tags:
-    - reading
+    - 读书
     - Thinking
     - 随想录
 ---

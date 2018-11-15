@@ -7,7 +7,7 @@ author:     "Teng"
 header-img: "img/post-bg-book.jpg"
 catalog: true
 tags:
-    - Reading
+    - 读书
     - 笔记
     - 随想录
     - Thinking
@@ -83,6 +83,3 @@ tags:
 也许，你会问，我也“只字不差地阅读”了，可有些问题还是不懂怎么办？
 
 **多读几遍**
-
-
-

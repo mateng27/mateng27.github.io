@@ -8,7 +8,6 @@ header-img: "img/post-bg-06reading0.jpg"
 catalog: true
 tags:
     - 随想录
-    - Reading
     - 读书
 ---
 ## 06月书单

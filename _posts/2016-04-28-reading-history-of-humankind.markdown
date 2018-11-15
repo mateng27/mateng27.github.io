@@ -2,13 +2,13 @@
 layout:     post
 title:      "从读《人类简史》到怎么避免认知误区"
 subtitle:   " 读书到脑洞大开 "
-date:       2016-04-28 
+date:       2016-04-28
 author:     "Teng"
 header-img: "img/post-bg-digital-native.jpg"
 catalog: true
 tags:
-    -  随想录
-    - reading
+    - 随想录
+    - 读书
     - 笔记
 ---
 
@@ -95,9 +95,3 @@ tags:
 
 ------
 > 本文遵循 CC BY 4.0协议，你可以自由的复制、分享，甚至用于商业目的，只要保留署名。
-
-
-
-
-
-

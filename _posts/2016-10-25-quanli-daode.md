@@ -9,7 +9,6 @@ header-img: "img/post-bg-book.jpg"
 tags:
 - 笔记
 - 读书
-- Reading
 ---
 
 ### 权利的悖论

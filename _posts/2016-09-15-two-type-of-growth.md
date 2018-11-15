@@ -10,7 +10,6 @@ tags:
     - 笔记
     - Thinking
     - 读书
-    - reading
 ---
 
 ## 对数增长V.S.指数增长

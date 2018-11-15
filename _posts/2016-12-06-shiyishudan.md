@@ -8,7 +8,6 @@ header-img: "img/post-bg-book2.jpg"
 tags:
 - 笔记
 - 读书
-- Reading
 ---
 
 ## 十一月书单
