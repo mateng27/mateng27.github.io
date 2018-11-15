@@ -7,13 +7,8 @@ author:     "Teng"
 header-img: "img/post-bg-e2e-ux.jpg"
 tags:
     - 电影
-    - 写作
+    - 感慨
 ---
-
-
-
-
-
 
 2005年，福尔摩斯诞生120周年，美国作家Mitch Cullin出版了一本“反福尔摩斯”的同人小说《心灵诡计》。
 
