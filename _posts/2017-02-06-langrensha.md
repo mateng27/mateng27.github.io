@@ -8,7 +8,6 @@ header-img: "img/post-bg-gongju.jpg"
 catalog: true
 tags:
 - 随想录
-- 人生
 - 生活
 - 感慨
 ---
@@ -59,4 +58,3 @@ tags:
 
 - - - -
 > 一个好游戏真的可以看出人生呢~  
-
