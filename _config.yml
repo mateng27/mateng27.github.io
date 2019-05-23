@@ -15,7 +15,7 @@ search: false
 
 # SNS settings
 RSS: false
-blog_username :tengblog
+blog_username: tengblog
 weibo_username: yanchufei
 #ins_username: lovemadao
 #jianshu_username: erLDs1
