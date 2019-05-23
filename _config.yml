@@ -14,7 +14,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 search: false
 
 # SNS settings
-RSS: false
+RSS: true
 blog_username: tengblog
 weibo_username: yanchufei
 #ins_username: lovemadao
