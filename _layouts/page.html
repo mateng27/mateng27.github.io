@@ -39,6 +39,7 @@ layout: default
             ">
     			{{ content }}
     		</div>
+
     <!-- Sidebar Container -->
             <div class="
                 col-lg-3 col-lg-offset-0
@@ -47,10 +48,12 @@ layout: default
                 col-xs-12
                 sidebar-container
             ">
-								<!-- Short About -->
-								{% include short-about.html %}
-								<!-- Featured Tags -->
+                <!-- Featured Tags -->
                 {% include featured-tags.html %}
+
+                <!-- Short About -->
+                {% include short-about.html %}
+
                 <!-- Friends Blog -->
                 {% include friends.html %}
     		</div>
