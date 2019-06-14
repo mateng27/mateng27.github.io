@@ -36,10 +36,6 @@ h6 {
   line-height: 1.1;
   font-weight: bold;
 }
-h1 {
-  // drop V1.1.1
-  //font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 h4 {
   font-size: 21px;
 }
@@ -125,6 +121,12 @@ pre code {
   white-space: pre; // save it but no-wrap;
   word-wrap: normal; // no-wrap
 }
+code,
+kbd,
+pre,
+samp {
+  font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+}
 
 // In the list of posts
 .postlist-container {
@@ -150,6 +152,7 @@ pre code {
   h5,
   h6 {
     margin: 30px 0 10px;
+    line-height: 1.4;
   }
   h5 {
     font-size: 19px;
@@ -166,6 +169,13 @@ pre code {
     & + p {
       margin-top: 5px;
     }
+  }
+  // downscale the font a little bit in mobile
+  @media screen and (max-width: 768px) {
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 21px; }
+    h4 { font-size: 19px; }
   }
   ul,
   ol {
@@ -219,6 +229,11 @@ pre code {
         letter-spacing: 0.5px;
       }
     }
+  }
+  .anchorjs-link {
+    // I can not understand this but this made anchor always in the same line as title
+    position: absolute; 
+    padding-top: 1px;
   }
 }
 
@@ -369,6 +384,34 @@ pre code {
       }
     }
   }
+  &.invert {
+    .navbar-toggle {
+      &:active {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      .icon-bar{
+        background-color: @gray-dark;
+      }
+    }
+    .navbar-brand {
+      color: @gray-dark;
+      &:hover,
+      &:focus {
+        color: @brand-primary;
+      }
+    }
+    .nav {
+      li {
+        a {
+          color: @gray-dark;
+          &:hover,
+          &:focus {
+            color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
   @media only screen and (min-width: 1170px) {
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
@@ -423,6 +466,28 @@ pre code {
 // Header
 
 .intro-header {
+  &.style-text {
+    background: none;
+    .site-heading,
+    .post-heading,
+    .page-heading {
+      padding: 85px 0 20px;
+      color: @gray-dark;
+      .subheading{
+        margin-bottom: 15px;
+      }
+    }
+    .tags {
+      a, .tag {
+        border-color: @gray-dark;
+        color: @gray-dark;
+        &:hover,
+        &:active {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+  }
   background: no-repeat center center;
   background-color: @gray;
   background-attachment: scroll;
@@ -491,7 +556,7 @@ pre code {
       .serif;
       font-style: italic;
       font-weight: 300;
-      font-size: 18px;
+      font-size: 16px;
       a {
         color: white;
       }
@@ -505,6 +570,25 @@ pre code {
       }
       .meta {
         font-size: 20px;
+      }
+    }
+  }
+  .header-img-credit {
+    position: absolute;
+    bottom: 6px;
+    right: 9px;
+    color: white;
+    opacity: 0.3;
+    font-size: 10px;
+    z-index: 1;
+    a {
+      color: white;
+    }
+    @media only screen and (min-width: 768px) {
+      & {
+        font-size: 12px;
+        bottom: 10px;
+        right: 15px;
       }
     }
   }
@@ -843,7 +927,8 @@ img::-moz-selection {
     margin-bottom: 8px;
     background: #f3f5f5;
     &:hover,
-    &:active {
+    &:active,
+    &.focus {
       background-color: #0085a1 !important;
     }
     &.focus{
@@ -852,7 +937,7 @@ img::-moz-selection {
     &.tag-button--all {
       font-weight: 700;
       color: #0085a1!important;
-      &:hover, &:active{
+      &:hover, &:active, &.focus{
         background-color: #e4e4e4 !important;
       }
     }
@@ -1073,4 +1158,10 @@ img::-moz-selection {
 }
 .page-fullscreen footer .copyright a:hover {
   color: #ddd;
+}
+
+// MathJax Overflow
+.MathJax_SVG_Display{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }

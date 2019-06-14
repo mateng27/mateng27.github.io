@@ -5,10 +5,16 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- SNS Link -->
                 {% include sns-links.html center=true %}
+
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
-                     向世界保持学习力 | Powered by <a href="http://tengblog.com">TengBlog</a>
+                    Powered by <a href="http://huangxuan.me">Hux Blog</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
                 </p>
             </div>
         </div>
@@ -61,15 +67,6 @@
     </script>
     <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
 -->
-
-<footer class="footer" id="footer">
-    <div class="container">
-        <p class="power">
-            Click Rate:<span id="busuanzi_value_site_pv"></span>，Visitor:<span id="busuanzi_value_site_uv"></span>，Pageview:<span id="busuanzi_value_page_pv"></span>.
-        </p>
-    </div>
-</footer>
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
@@ -138,7 +135,7 @@
 <script type="text/javascript">
     function generateCatalog (selector) {
 
-        // interop with multilangual
+        // interop with multilangual 
         if ('{{ page.multilingual }}' == 'true') {
             _containerSelector = 'div.post-container.active'
         } else {
@@ -228,7 +225,7 @@
             $en.style.display = "none";
             $en.classList.remove("active");
         }
-        // interop with catalog
+        // interop with catalog 
         if ("{{ page.catalog }}") generateCatalog(".catalog-body");
     }
 
