@@ -15,7 +15,7 @@ tags:
 
 **永远对未来有信心**
 
-![](http://images.tengblog.cn/20190805100630_yir2lg_Lark20190802192757.png)
+![](http://images.tengblog.com/20190805100630_yir2lg_Lark20190802192757.png)
 
 > 股票是人们对未来的预测
 
