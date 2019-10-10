@@ -77,7 +77,7 @@ ga_domain: tengblog.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "世事无常，精进不已是惟一靠谱的人生策略。"
+sidebar-about-description: "世事无常，精进不已"
 sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
