@@ -1,0 +1,151 @@
+I"�!<blockquote>
+  <p>sublime学习技巧，存根查询</p>
+</blockquote>
+
+<p>本文为您提供Sublime Text编辑器的12个技巧和诀窍，深入挖掘这个看似简洁的代码编辑器，背后所隐藏的实现各种高级功能的无限可能。</p>
+
+<p><strong>1) 选择</strong></p>
+
+<p>以下是一些Sublime Text选择文本的快捷键：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command + D</code> 选中一个单词</li>
+  <li><code class="highlighter-rouge">Command + L</code> 选中一行</li>
+  <li><code class="highlighter-rouge">Command + A</code> 全选</li>
+  <li><code class="highlighter-rouge">Ctrl + Command + M</code> 选中括号内所有内容 (编写CSS或JS时非常实用)</li>
+</ul>
+
+<p>Sublime Text还支持一次选中多行的操作，它可以显著提高您的工作效率。有几种方法来执行此功能：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command</code> 按住<code class="highlighter-rouge">Command</code>键再点击想选中的行</li>
+  <li><code class="highlighter-rouge">Command + Ctrl + G</code> (选中部分文本时) 按此键选中所有相同文本</li>
+  <li><code class="highlighter-rouge">Command + D</code> (选中部分文本时) 直接选中下一次出现的该文本</li>
+</ul>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao1.gif" alt="图片描述" /></p>
+
+<p><strong>2) CSS排序</strong></p>
+
+<p>CSS属性的顺序一般不重要，因为无论何种顺序浏览器都能正确渲染。但排序所有的属性还是有助于代码的整洁。在Sublime Text中，选中CSS属性后按F5就可以按字母顺序排序。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao2.gif" alt="图片描述" /></p>
+
+<p>也可以使用 <strong><a href="https://github.com/csscomb/CSScomb-for-Sublime">CSSComb</a></strong> 等第三方插件，更详细的控制排序的方法。</p>
+
+<p><strong>3) 命令面板（Command Palette）</strong></p>
+
+<p>使用命令面板可以快速完成多重任务。按<code class="highlighter-rouge">Command + Shift + P</code>调出面板，键入需要的命令即可。看以下的几个示例：</p>
+
+<p><strong>▼ 重命名文件</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao3.jpg" alt="rename-file" /></p>
+
+<p><strong>▼ 设置文件为HTML语法</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao4.jpg" alt="syntax-html" /></p>
+
+<p><strong>▼ 插入代码片段</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao5.jpg" alt="insert-snippet" /></p>
+
+<p><strong>4) 切换标签页与工程</strong></p>
+
+<p>在同时打开多个标签页时，可以用以下的热键切换：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command + T</code> 列出所有的标签页</li>
+  <li><code class="highlighter-rouge">Command + Shift + ]</code> 下一标签页</li>
+  <li><code class="highlighter-rouge">Command + Shift + [</code> 上一标签页</li>
+  <li><code class="highlighter-rouge">Command + Ctrl + P</code> 切换侧边栏显示的工程</li>
+</ul>
+
+<p><strong>5) 跨文件编辑</strong></p>
+
+<p>同一个编辑操作可以在多个文件中同时重复。举个例子，多个文件中有同一段代码时，可用以下的步骤快速编辑：</p>
+
+<ol>
+  <li>按<code class="highlighter-rouge">Command + Shift + F</code>在<code class="highlighter-rouge">Find</code>框中输入待查找的代码。可按<code class="highlighter-rouge">Command + E</code>快速使用选择中的代码段。</li>
+  <li>在<code class="highlighter-rouge">Where</code>框中指定需要查找的文件范围，或填写<code class="highlighter-rouge">&lt;open files&gt;</code>表示查找目前打开的文件。</li>
+  <li>在<code class="highlighter-rouge">Replace</code>框中输入要替换成的代码，按<code class="highlighter-rouge">Replace</code>按钮批量替换。</li>
+</ol>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao6.jpg" alt="find-search-fields" /></p>
+
+<p><strong>6) 文件爬虫</strong></p>
+
+<p>按<code class="highlighter-rouge">Command + R</code>可以列出文档中所有的CSS选择器。可以选择并立刻跳转查看。这个操作比使用一般的“查找”功能快得多。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao7.jpg" alt="file-crawling" /></p>
+
+<p><strong>7) 拼写检查</strong></p>
+
+<p>如果你经常使用Sublime Text从事英文创作，那么启用拼写检查就非常有用处了。选择<code class="highlighter-rouge">Preferences &gt; Settings – User</code>菜单，添加以下代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"spell_check": true,    
+</code></pre></div></div>
+
+<p><strong>8) 增强侧边栏</strong></p>
+
+<p><strong><a href="https://github.com/titoBouzout/SideBarEnhancements/tree/st3">SideBarEnhancements</a></strong>插件有效地改进了Sublime Text的侧边栏。安装插件后在侧边栏上点击右键，可以找到一下新功能：在资源管理器中打开、新建文件、新建文件夹、以…打开、在浏览器中打开。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao8.jpg" alt="图片描述" /></p>
+
+<p>注：在浏览器中打开的热键是<code class="highlighter-rouge">F12</code>。</p>
+
+<p><strong>9) 更换主题</strong></p>
+
+<p>Sublime Text的外观主题可以更换。<strong><a href="https://github.com/buymeasoda/soda-theme">Soda Theme</a></strong>就是一个不错的主题，可以在包管理器中安装。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao9.jpg" alt="soda-theme" /></p>
+
+<p>如果要安装的主题并不在在线软件仓库中，也可以手动安装：</p>
+
+<ol>
+  <li>下载并解压缩主题包</li>
+  <li>点击菜单 <code class="highlighter-rouge">Preferences &gt; Browse Packages</code>…</li>
+  <li>把主题文件夹复制到<code class="highlighter-rouge">Packages</code>文件夹中.</li>
+  <li>点击菜单 <code class="highlighter-rouge">Preferences &gt; Settings – Users</code> 并加入以下代码：<code class="highlighter-rouge">"theme": "Soda Light.sublime-theme"</code></li>
+</ol>
+
+<p><strong>10) 更换Sublime Text程序图标</strong></p>
+
+<p>不仅主题可以更换，图标也可以。在<strong><a href="https://dribbble.com/">Dribbble</a></strong>上有大量重新设计的Sublime Text精美图标。更换方法：</p>
+
+<ol>
+  <li>下载一个图标，有<code class="highlighter-rouge">.icns</code>格式的最好。如果没有，用<strong><a href="https://iconverticons.com/online/">iConvert</a></strong>转换之。</li>
+  <li>终端执行：<code class="highlighter-rouge">open /Applications/Sublime\ Text.app/Contents/Resources/</code></li>
+  <li>替换<code class="highlighter-rouge">Sublime Text 3.icns</code>或<code class="highlighter-rouge">Sublime Text 2.icns</code>文件。</li>
+</ol>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao10.jpg" alt="sublime-text-icon" /></p>
+
+<p><strong>11) 同步选项</strong></p>
+
+<p>如果在多台计算机上工作，同步选项设置应该是一个好主意。我们借用Dropbox完成这一任务。</p>
+
+<p>首先在终端中运行以下命令上传设置文件：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir $HOME/Dropbox/sublime-text-3/  
+mv "$HOME/Library/Application Support/Sublime Text 3/Packages" "$HOME/Dropbox/sublime-text-3/"  
+mv "$HOME/Library/Application Support/Sublime Text 3/Installed Packages" "$HOME/Dropbox/sublime-text-3/"  
+</code></pre></div></div>
+
+<p>然后在所有需要同步的计算机上运行以下命令下载设置：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DSTPATH="$HOME/Library/Application Support/Sublime Text 3"  
+DROPBOX_PATH="$HOME/Dropbox/sublime-text-3"  
+rm -rf "$DSTPATH/Installed Packages"  
+rm -rf "$DSTPATH/Packages"  
+mkdir -p "$DSTPATH"  
+ln -s "$DROPBOX_PATH/Packages" "$DSTPATH/Packages"  
+ln -s "$DROPBOX_PATH/Installed Packages" "$DSTPATH/Installed Packages"  
+</code></pre></div></div>
+
+<p><strong>12) 可点击的URL</strong></p>
+
+<p>使用小插件<strong><a href="https://github.com/leonid-shevtsov/ClickableUrls_SublimeText">ClickableURLs</a></strong>可以让文件中的URL能够点击。</p>
+
+<blockquote>
+  <p>原文：<strong><a href="http://www.hongkiat.com/blog/sublime-text-tips/">12 Most-Wanted Sublime Text Tips and Tricks</a></strong><br />
+编译：SegmentFault<br />
+原文地址：<a href="http://segmentfault.com/a/1190000000505218">http://segmentfault.com/a/1190000000505218</a></p>
+</blockquote>
+:ET

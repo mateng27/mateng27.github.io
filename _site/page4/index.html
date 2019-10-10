@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="TENG">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="惟有影像&文字 可以打败时间">
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux.jpg">
+    <meta property="og:url" content="http://localhost:4000/page4/">
+    <meta property="og:site_name" content="TENG">
+    
+    <title>TENG</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/page4/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TENG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/"> about</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+
+
+
+
+
+
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>TENG</h1>
+          <span class="subheading">惟有影像&文字 可以打败时间</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			
+<div class="post-preview">
+    <a href="/2017/03/10/xiaoshuoke/">
+        <h2 class="post-title">
+            文学的阅读能力
+        </h2>
+        
+        <h3 class="post-subtitle">
+            《小说课》读后感
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                文学的阅读能力
+
+
+
+
+  什么叫做写作能力？说到底，就是学习阅读。你读明白了，你自然就写出来了。阅读能力越强，写作的能力就越强。
+
+  所以，我说，阅读是需要才华的，阅读的才华就是写作的才华。
+
+  —毕飞宇
+
+
+我以前就觉得很多人是没有阅读能力的，阅读不了说明类的文章。作者明明在文章里面清清楚楚写了怎么操作，怎么按照步骤来作，下面的评论还是会有人问：“入口在哪？”
+
+「一字不差地阅读」虽...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on March 10, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/03/06/eryue/">
+        <h2 class="post-title">
+            二月独处
+        </h2>
+        
+        <h3 class="post-subtitle">
+            一个兵荒马乱的二月
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                二月独处
+
+
+  人生里有两种时刻最为难捱。一种是独处的时候，正常人很难忍受自己和自己面对面。每当那样的时刻到来，会非常尴尬地发现最难相处的并不是那些自己讨厌的人，而是自己。这就是为什么我们在独处的时候会胡思乱想，要开着电视，要不断刷新手机。所有这一切，都是为了回避直接面对自己。在寂然无声的客厅里，坐在沙发上，会特别强烈地感到孤独，但是这种孤独又毫无美感，只是拖曳着自己的心一路下沉。
+
+
+和...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on March 6, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/28/tiaocao/">
+        <h2 class="post-title">
+            跳槽的准备
+        </h2>
+        
+        <h3 class="post-subtitle">
+            一些观点的整理
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                进入荒野求生的游戏，人生就会变得残酷许多，任何的困难都要自己克服。总想着也许「换个工作就好了」，结果发现「换个工作」反倒成了一种负担。关于跳槽，一些观点，多见于《超级个体》的专栏。
+
+
+  换游泳池并不能解决不会游泳的问题。有一些问题，比如自我管理、人际沟通、不懂得手机信息、不知道自己要什么，并不会随着转换工作而消失。反而会因为一次次度过新鲜感以后感到同样的状况而陷入习得性无助。
+
+
+跳槽的...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 28, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/27/sichaodai/">
+        <h2 class="post-title">
+            「读书」四朝的人生
+        </h2>
+        
+        <h3 class="post-subtitle">
+            《四朝代》读后感
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                四朝的人生
+
+帕怡去了，结束了自己活过四朝的生命。
+
+
+  四朝代的人太老了吧？要么别的事是我这么累……四朝代……
+
+
+这本《四朝代》上下两册，大概九百页，即便是出了同名的电视剧，也有四十集，真是太长了。漫长的就像帕怡的一生，平铺直叙的风格也让人读来心烦。
+
+帕怡去世的时节，正是拉玛八世被暗杀（多种说法，采用暗杀说）的时机，后面要登场的正是普密蓬大帝，他在2016年去世。他在位时间太长了，都...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 27, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/24/lvyou/">
+        <h2 class="post-title">
+            微斯人，吾谁与游
+        </h2>
+        
+        <h3 class="post-subtitle">
+            一脸怅然若失
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+
+慢慢地不太喜欢自己一个人出去玩了。周末的时候更喜欢自己一个人在家里看看电影，或者干脆发会呆。工作，为五斗米折腰的时候，和喜欢的人出去玩成了奢侈。
+
+不能制作新的美好，回忆过去的美好成了大家一致的选择。也许是工作了一年，大家稍有积蓄或者受够了工作环境的苦闷，回泰国旅游的在朋友圈里多了起来。
+
+我记得。
+
+每年11月，泰国清迈都会有一场盛大的天灯放飞活动，漫天的「孔明灯」带着大家美好的祝愿飞...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 24, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/17/licai/">
+        <h2 class="post-title">
+            财富自由之路--践行（1） 
+        </h2>
+        
+        <h3 class="post-subtitle">
+            希望做个有钱有趣的人，实在不行，光有钱也行
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                
+  希望做个有钱有趣的人，实在不行，光有钱也行
+
+
+
+
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 17, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/17/kesi/">
+        <h2 class="post-title">
+            科斯对中国变革的看法
+        </h2>
+        
+        <h3 class="post-subtitle">
+            《变革中国》读后感
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                《变革中国》读后感
+
+2013年9月3日，美国芝加哥大学发布讣告称，诺贝尔经济学奖得主科斯于9月2日在芝加哥圣若瑟医院辞世，享年102岁。那时候的我正在一家经济报社实习，报纸要出纪念文章，纪念这个「中国情结」的诺贝尔获奖者，很惭愧的是，那个时候的我根本不知道谁是科斯，连这本《变革中国》也没有看过，还处在一脸无知的状态。
+
+张五常回忆说，「科斯对中国人有偏爱，认为炎黄子孙是个伟大的民族，总有一...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 17, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/14/lanv/">
+        <h2 class="post-title">
+            摆脱企业蓝 V 的 「透明」位置 
+        </h2>
+        
+        <h3 class="post-subtitle">
+            机构微博号的运营几点
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                摆脱企业蓝 V的 「透明」位置
+
+错过的那几年
+
+2013年，我在北京《21世纪经济报道》实习，也许是听了风传说什么「纸媒在衰落」之类的，想换个实习，去面试了《凤凰周刊》的微博运营。对，那个时候还叫「微博运营」，不像现在叫「新媒体运营」。
+
+可惜的是当时的我还心怀新闻理想，一心想写严肃报道，在一顿狂云之后没有去报道（主要是不好意思和学长提换地方）。这是一次我超级自信的面试。当时微博上刚刚开始...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 14, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/14/jianli/">
+        <h2 class="post-title">
+            做好准备，随时求职
+        </h2>
+        
+        <h3 class="post-subtitle">
+            保持下求职应试的状态
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                做好准备，随时求职
+
+38%的中国受访者会经常更新他们在专业社交媒体上的个人资料和简历。不过，这个比例低于亚洲邻国，马来西亚、中国香港、新加坡、日本，分别为51%、48%、46%、42%。
+
+其实，不管是职场新人还是职场老手，随时更新自己的简历，做好随时求职的准备是一个很有必要的事情，这不仅仅是帮助中国职场人士提升数据，对个人来说其实大有裨益。
+
+正确认识简历
+
+在很多HR眼中，员工更新简历...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 14, 2017
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="/2017/02/13/laoyouji/">
+        <h2 class="post-title">
+            《老友记》里的污梗
+        </h2>
+        
+        <h3 class="post-subtitle">
+            一个留存，以后对照欣赏
+        </h3>
+        
+        <div class="post-content-preview">
+            
+                《老友记》里的污梗
+
+
+  全文来自谷大白话的付费回答，留存，以后再看美剧时对照。
+
+
+《老友记》里有很多被人忽略的黄暴段子。甚至时常看到有人说“F6是纯洁的喜剧”“2.5Men太三俗，你看人家老友记多健康”。这种误解的主要原因是，《老友记》年代太早，翻译版本都比较粗糙，不少三俗笑点被丢掉。比如S3E23里的一段：
+
+Ross: I was in the shower, and I felt...
+            
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by Teng on February 13, 2017
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/page3">&larr; Newer Posts</a>
+    </li>
+    
+    
+    <li class="next">
+        <a href="/page5">Older Posts &rarr;</a>
+    </li>
+    
+</ul>
+
+
+    		</div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+						<!-- Short About -->
+						<section class="visible-md visible-lg">
+  <hr>
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+    
+    <img src="/img/avatar-hux.jpg" />
+    
+    
+    <p>世事无常</p>
+    
+    <!-- SNS Link -->
+    
+
+
+<ul class="list-inline">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+  </div>
+</section>
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0095" 
+                    href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="随想录"
+                    rel="118">随想录</a>
+        
+                <a data-sort="0149" 
+                    href="/archive/?tag=%E7%9E%8E%E6%89%AF"
+                    title="瞎扯"
+                    rel="64">瞎扯</a>
+        
+                <a data-sort="0152" 
+                    href="/archive/?tag=Thinking"
+                    title="Thinking"
+                    rel="61">Thinking</a>
+        
+                <a data-sort="0160" 
+                    href="/archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="53">笔记</a>
+        
+                <a data-sort="0161" 
+                    href="/archive/?tag=%E8%AF%BB%E4%B9%A6"
+                    title="读书"
+                    rel="52">读书</a>
+        
+                <a data-sort="0163" 
+                    href="/archive/?tag=%E6%84%9F%E5%8F%B9"
+                    title="感叹"
+                    rel="50">感叹</a>
+        
+                <a data-sort="0170" 
+                    href="/archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="43">生活</a>
+        
+                <a data-sort="0173" 
+                    href="/archive/?tag=lofter"
+                    title="lofter"
+                    rel="40">lofter</a>
+        
+                <a data-sort="0184" 
+                    href="/archive/?tag=%E5%AD%A6%E4%B9%A0"
+                    title="学习"
+                    rel="29">学习</a>
+        
+                <a data-sort="0186" 
+                    href="/archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="27">产品</a>
+        
+                <a data-sort="0190" 
+                    href="/archive/?tag=%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86"
+                    title="泰国杂忆"
+                    rel="23">泰国杂忆</a>
+        
+                <a data-sort="0191" 
+                    href="/archive/?tag=%E6%84%9F%E6%85%A8"
+                    title="感慨"
+                    rel="22">感慨</a>
+        
+                <a data-sort="0194" 
+                    href="/archive/?tag=%E8%81%8C%E5%9C%BA"
+                    title="职场"
+                    rel="19">职场</a>
+        
+                <a data-sort="0197" 
+                    href="/archive/?tag=%E6%AD%A3%E7%BB%8F"
+                    title="正经"
+                    rel="16">正经</a>
+        
+                <a data-sort="0199" 
+                    href="/archive/?tag=%E7%94%B5%E5%BD%B1"
+                    title="电影"
+                    rel="14">电影</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E5%8E%9F%E5%88%99"
+                    title="原则"
+                    rel="12">原则</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E7%BC%96%E7%A8%8B"
+                    title="编程"
+                    rel="12">编程</a>
+        
+                <a data-sort="0203" 
+                    href="/archive/?tag=Learning"
+                    title="Learning"
+                    rel="10">Learning</a>
+        
+                <a data-sort="0206" 
+                    href="/archive/?tag=%E5%8D%9A%E5%AE%A2"
+                    title="博客"
+                    rel="7">博客</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=%E6%97%85%E8%A1%8C"
+                    title="旅行"
+                    rel="3">旅行</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=vlog"
+                    title="vlog"
+                    rel="3">vlog
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://wdxtub.com/">小土刀</a></li>
+  
+  <li><a href="http://mindhacks.cn">暗时间</a></li>
+  
+  <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+  
+  <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+  
+  <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+  
+</ul>
+
+    		</div>
+        
+	</div>
+</div>
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; TENG 2019
+                    <br>
+                     向世界保持学习力 | Powered by <a href="https://tengblog.com">TengBlog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-79793350-1';
+    var _gaDomain = 'tengblog.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '6aa02cf6d8ee848133e919e39e594a3e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

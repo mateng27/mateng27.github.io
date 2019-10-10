@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="搭建自己的博客----教程 - TENG">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="一小时搭建个人博客网站
+">
+    
+    <meta property="article:published_time" content="2016-06-16T00:00:00Z">
+    
+    
+    <meta property="article:author" content="Teng">
+    
+    
+    <meta property="article:tag" content="编程">
+    
+    <meta property="article:tag" content="Thinking">
+    
+    <meta property="article:tag" content="Learning">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux.jpg">
+    <meta property="og:url" content="http://localhost:4000/2016/06/16/blog-jiaocheng/">
+    <meta property="og:site_name" content="TENG">
+    
+    <title>搭建自己的博客----教程 - TENG</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2016/06/16/blog-jiaocheng/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TENG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/"> about</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-blog.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-blog.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%E7%BC%96%E7%A8%8B" title="编程">编程</a>
+                        
+                        <a class="tag" href="/archive/?tag=Thinking" title="Thinking">Thinking</a>
+                        
+                        <a class="tag" href="/archive/?tag=Learning" title="Learning">Learning</a>
+                        
+                    </div>
+                    <h1>搭建自己的博客----教程</h1>
+                    
+                    <h2 class="subheading">自己的博客，含泪也要写下去</h2>
+                    <span class="meta">Posted by Teng on June 16, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h2 id="一小时搭建个人博客网站">一小时搭建个人博客网站</h2>
+
+<blockquote>
+  <p>简单粗暴，先上链接
+<a href="tengblog.com">马腾的博客</a></p>
+</blockquote>
+
+<blockquote>
+  <p>本教程只为自己记录和纯小白设计，欢迎技术大神指点。</p>
+</blockquote>
+
+<h4 id="前言">前言</h4>
+<p>一直在网络上的写作空间周转，断断续续的换了好多平台，从新浪博客到lofter到点点到微信公众平台，但是心中还是有着<strong>自己搭个网站</strong>的想法。</p>
+
+<p>在五月份开始开始着手这件事，最终还算有个不错的成品出现，将文章替换，替换图片，这个也算是打上了自己的印记。</p>
+
+<p>本来这是很简单的事情，但是碍于我纯技术小白的背景，结果在一些地方浪费了好多时间，好在折腾的劲头还是有的，记录一下过程，有同样想法的同学可以参考。</p>
+
+<h3 id="建站选择">建站选择</h3>
+
+<p>个人博客现在有很多方法可是实现，对于没什么编程经历的来说，这几种简直是最适合的：</p>
+<ul>
+  <li>FarBox
+  简单粗暴的方式，用钱来解决。只要不多的钱，你就能得到一个简洁易用的博客，这绝对是最好的方式，别忘了
+    <blockquote>
+      <p><strong>可以用钱解决的问题就不要浪费其他资源</strong>
+  要是要我重新开始，我选这个。</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>Hexo - Node.js blog framework
+用 Node.js 搭建的博客平台，速度快，免费，同样搭建在 Github 上。操作比 Jekyll 简单，命令少，易于记忆。 安装好像也简单一点。这个选择也比我的优秀，细心的同学也许会发现，<a href="xiaolai.li">李笑来</a>就是用hexo搭建的。
+  <strong>这种也比我的方式简单。</strong></p>
+  </li>
+  <li>gitpage+jekyll 搭建
+  好了，我们主要讲这种，也是我选用的方式。
+  借用那么多优秀工程师的开源资源，我们可以和简单地搭建出自己的博客，感谢他们的无私分享。</li>
+</ul>
+
+<h3 id="建站过程">建站过程</h3>
+<h4 id="申请账号">申请账号</h4>
+<p>因为这些都是借用了git提供的gitpage服务，所以我们要先申请个git账号。</p>
+
+<p><a href="github.com">点击github申请账号</a></p>
+
+<blockquote>
+  <p>github 真实个好东西。</p>
+</blockquote>
+
+<p>这个过程很简单，不做多说。</p>
+
+<h4 id="挑选模版">挑选模版</h4>
+<p>jekyll的模版很多，简洁，适合单纯地写作，同时因为是静态博客容易被谷歌爬取，很容易被检索到。</p>
+
+<p><a href="http://jekyllthemes.org/">你可挑选这些模版</a>同时，也有网友替我们做了初步的筛选，<a href="http://azeril.me/blog/Selected-Collection-of-Jekyll-Themes.html">Jekyll 博客主题精选</a>，我们要做的就是选一个自己喜欢的。</p>
+
+<h4 id="fork源码">fork源码</h4>
+<p>找好了博客，进入作者的github页面，我们点一下fork就可以得到别人精心制作的源码。
+！<a href="http://7xtgob.com2.z0.glb.clouddn.com/blogjiaocheng%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160615111416.png"></a></p>
+
+<p>这样以后你就建立了一个项目，如下图
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/blogjiaocheng%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160615160314.png" alt="Alt text" /></p>
+
+<p><strong>这里有个注意点：</strong></p>
+<blockquote>
+  <p>你在github的昵称要和项目一样，这是个容易出现问题的地方。</p>
+
+  <p>点击项目下册的“setting”修改项目的名称为<strong>“xxxx.github.io”</strong>。</p>
+
+  <p><strong>xxxx是你的昵称</strong></p>
+
+</blockquote>
+
+<p>必须这样：
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/blogjiaocheng.1465979176007.png" alt="Alt text" /></p>
+
+<p>然后你访问<strong>xxxx.github.io</strong>便可以了，这就是你的博客了。</p>
+
+<p>如果没有成功，请稍等一会，解析可能在路上。<strong>或者将文档中的“CNAME”修改为空白或删除。</strong></p>
+
+<p>不过你还需要下一步，不断的修改完善。</p>
+
+<h4 id="完善修改">完善修改</h4>
+
+<p>我们fork的博客目录主要有这些，这就需要我们慢慢修改了。</p>
+
+<blockquote>
+  <p>目录文档详细说明。如下：</p>
+</blockquote>
+
+<blockquote>
+  <p>_config.yml 博客配置文档（包括博客标题、favicon、博主 ID、头像、描述、联系方式等基本信息都在这个文档添加或修改）；
+index.html 博客架构文档；</p>
+
+  <p>_includes 博客调用的网页模块（比如导航栏、底栏、博文内容显示、评论模块等），一般不需要管；</p>
+</blockquote>
+
+<blockquote>
+  <p>_layouts 存放博客调用的页面模板文件（比如博客主页、具体博文页）的文件夹；</p>
+</blockquote>
+
+<blockquote>
+  <p>css 存放博客系统的页面渲染文档文件夹，主要用于调节诸如标题字体、博文字体大小颜色之类；</p>
+</blockquote>
+
+<blockquote>
+  <p>js 存放博客调用的 JS 文档文件夹</p>
+</blockquote>
+
+<blockquote>
+  <p>_posts 博客正文存放的文件夹。命名有规定，必须为「日期 + 标题」的模式，即「2015-04-27-Like-Kissing.md」，才能发布到博客里；</p>
+</blockquote>
+
+<blockquote>
+  <p>images 图片文件夹，存放博客相关素材，包括博客 favicon、博主头像等图片及博文贴图素材；</p>
+</blockquote>
+
+<blockquote>
+  <p>CNAME 用于绑定个人域名的文档；</p>
+</blockquote>
+
+<blockquote>
+  <p>404.html 「404 Not Found.」站点链接无法访问时的提示页面。</p>
+</blockquote>
+
+<blockquote>
+  <p>About.html 博客中的个人说明文档（About Me），以 html、md 格式为主；</p>
+</blockquote>
+
+<blockquote>
+  <p>feed.xml 博客的 RSS 订阅；</p>
+</blockquote>
+
+<blockquote>
+  <p>README.md 项目说明文档。用于 Github 个人项目主页的说明（描述）。</p>
+</blockquote>
+
+<p><strong>修改要点：</strong></p>
+<ul>
+  <li>保持尺寸的维持原状</li>
+  <li>保证文件名的修改统一</li>
+</ul>
+
+<p>程序出现一点差错就会失败。</p>
+
+<h4 id="撰写博文">撰写博文</h4>
+
+<p>ok，修改完了这些，让我们一起写下第一篇文章。
+按照上面说的，我们的博客在</p>
+<blockquote>
+  <p>**_posts **文件夹</p>
+</blockquote>
+
+<p>打开观察，里面的文件是md格式，也就是我们需要的Markdown样式的。</p>
+
+<p>其命名也要遵循标准：</p>
+<blockquote>
+  <p>2015-04-27-my-blog.md</p>
+</blockquote>
+
+<p>每篇文章前都有博文代码：</p>
+<blockquote>
+  <p>layout 一般不用改；
+Title 一项是必须添加的；
+Categories 目录可以换，但如果不是要多重分类，一般也不用管，这篇归档在 Blog 目录下；
+Tags 可以自己按照文章主题添加，也可以不加，不同的 Tags 直接用英文逗号加半角空格间隔开；
+description 博文概述，一句话概述，一般添加会好些。</p>
+</blockquote>
+
+<p>然后保存起来就可以啦!</p>
+
+<h4 id="同步到网络">同步到网络</h4>
+
+<p>因为我一直没有在本地安转jekyll环境，采用直接在github更新的方式，如下
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/blogjiaocheng%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20160615160314.png" alt="Alt text" /></p>
+
+<p>就像在后台更新。</p>
+
+<p>当然，你也可以通过github桌面端的方式同步进行版本管理。<a href="https://desktop.github.com/">桌面端下载链接</a></p>
+
+<h3 id="绑定域名坚持写下去">绑定域名+坚持写下去</h3>
+
+<p>倘若为了追求个人品牌的最大化，我们可以去购买域名，然后绑定到刚刚建立的博客上。</p>
+
+<p>我在阿里云购入域名，使用的也是免费的解析，这些其实并不太重要。</p>
+
+<p>最重要的是：</p>
+<blockquote>
+  <p><strong>坚持书写，坚持更新</strong></p>
+</blockquote>
+
+<p>在寻找模版的过程中，见过太多只有几篇的博客，也许是主人在建好以后没有了书写的兴趣。</p>
+
+<p>这违背了我们建站的初衷，<strong>坚持不断地更新</strong>，这才是最有用的。</p>
+
+<h3 id="致谢">致谢</h3>
+
+<p>感谢在建站过程中的优秀教程，主要参考如下：
+<a href="http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html">打造你的 GitHub Pages 专属博客（小白教程）</a>
+<a href="http://azeril.me/blog/Selected-Collection-of-Jekyll-Themes.html">Jekyll 博客主题精选</a>
+<a href="http://beiyuu.com/github-pages">使用Github Pages建独立博客</a></p>
+
+<p>感谢黄玄<a href="http://huangxuan.me/">博客</a>我fork的他的博客，简洁优雅，很漂亮。</p>
+
+<p>也感谢给我提供帮助的<a href="http://geno1024.com/">geno1024</a>，一个计算机专业的姑娘，她以后绝对是笑来说的“女神”！</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/06/13/fanhaitao-reading/" data-toggle="tooltip" data-placement="top" title="日渐飘远的梦想">
+                        Previous<br>
+                        <span>日渐飘远的梦想</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/06/18/zhichang-liangshi/" data-toggle="tooltip" data-placement="top" title="寻找自己的职场良师">
+                        Next<br>
+                        <span>寻找自己的职场良师</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0095" 
+                    href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="随想录"
+                    rel="118">随想录</a>
+        
+                <a data-sort="0149" 
+                    href="/archive/?tag=%E7%9E%8E%E6%89%AF"
+                    title="瞎扯"
+                    rel="64">瞎扯</a>
+        
+                <a data-sort="0152" 
+                    href="/archive/?tag=Thinking"
+                    title="Thinking"
+                    rel="61">Thinking</a>
+        
+                <a data-sort="0160" 
+                    href="/archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="53">笔记</a>
+        
+                <a data-sort="0161" 
+                    href="/archive/?tag=%E8%AF%BB%E4%B9%A6"
+                    title="读书"
+                    rel="52">读书</a>
+        
+                <a data-sort="0163" 
+                    href="/archive/?tag=%E6%84%9F%E5%8F%B9"
+                    title="感叹"
+                    rel="50">感叹</a>
+        
+                <a data-sort="0170" 
+                    href="/archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="43">生活</a>
+        
+                <a data-sort="0173" 
+                    href="/archive/?tag=lofter"
+                    title="lofter"
+                    rel="40">lofter</a>
+        
+                <a data-sort="0184" 
+                    href="/archive/?tag=%E5%AD%A6%E4%B9%A0"
+                    title="学习"
+                    rel="29">学习</a>
+        
+                <a data-sort="0186" 
+                    href="/archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="27">产品</a>
+        
+                <a data-sort="0190" 
+                    href="/archive/?tag=%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86"
+                    title="泰国杂忆"
+                    rel="23">泰国杂忆</a>
+        
+                <a data-sort="0191" 
+                    href="/archive/?tag=%E6%84%9F%E6%85%A8"
+                    title="感慨"
+                    rel="22">感慨</a>
+        
+                <a data-sort="0194" 
+                    href="/archive/?tag=%E8%81%8C%E5%9C%BA"
+                    title="职场"
+                    rel="19">职场</a>
+        
+                <a data-sort="0197" 
+                    href="/archive/?tag=%E6%AD%A3%E7%BB%8F"
+                    title="正经"
+                    rel="16">正经</a>
+        
+                <a data-sort="0199" 
+                    href="/archive/?tag=%E7%94%B5%E5%BD%B1"
+                    title="电影"
+                    rel="14">电影</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E5%8E%9F%E5%88%99"
+                    title="原则"
+                    rel="12">原则</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E7%BC%96%E7%A8%8B"
+                    title="编程"
+                    rel="12">编程</a>
+        
+                <a data-sort="0203" 
+                    href="/archive/?tag=Learning"
+                    title="Learning"
+                    rel="10">Learning</a>
+        
+                <a data-sort="0206" 
+                    href="/archive/?tag=%E5%8D%9A%E5%AE%A2"
+                    title="博客"
+                    rel="7">博客</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=%E6%97%85%E8%A1%8C"
+                    title="旅行"
+                    rel="3">旅行</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=vlog"
+                    title="vlog"
+                    rel="3">vlog
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://wdxtub.com/">小土刀</a></li>
+  
+  <li><a href="http://mindhacks.cn">暗时间</a></li>
+  
+  <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+  
+  <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+  
+  <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; TENG 2019
+                    <br>
+                     向世界保持学习力 | Powered by <a href="https://tengblog.com">TengBlog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-79793350-1';
+    var _gaDomain = 'tengblog.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '6aa02cf6d8ee848133e919e39e594a3e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

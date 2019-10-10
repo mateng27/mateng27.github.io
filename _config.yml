@@ -40,8 +40,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
+plugins: [jekyll-paginate]
 
 
 # Markdown settings
@@ -77,7 +76,7 @@ ga_domain: tengblog.com
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "世事无常，精进不已"
+sidebar-about-description: "世事无常"
 sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -108,21 +107,6 @@ friends: [
     },{
         title: "黄玄的博客",
         href: "http://huangxuan.me"
-    },{
-        title: "一肩月光",
-        href: "http://zwb.io/"
-    },{
-        title: "初尘的博客",
-        href: "https://perhapslove.github.io/"
-    },{
-        title: "小胖轩",
-        href: "https://codeboy.me/"
-    },{
-        title: "Bruce Zhao's Blog",
-        href: "http://brucezhaor.github.io/"
-    },{
-        title: "Geno1024的博客",
-        href: "http://geno1024.com/"
     },{
         title: "马腾的lofter",
         href: "http://matengteng.lofter.com"

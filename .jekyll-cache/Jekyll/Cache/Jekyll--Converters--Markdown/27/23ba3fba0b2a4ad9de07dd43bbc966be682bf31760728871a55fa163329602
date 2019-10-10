@@ -1,0 +1,870 @@
+I"
+�<p>最近更换了更为成熟的sublime 编辑器，加装了emmet插件，为了更加熟练的使用emmet，将常用快捷键转载于此，便于以后查询学习。</p>
+
+<blockquote>
+  <p>文章转载，来源 <a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html">前端开发必备！Emmet使用手册</a></p>
+</blockquote>
+
+<h1 id="使用方法">使用方法</h1>
+
+<p>emmet的使用方法也非常简单，以sublime text为例，直接在编辑器中输入HTML或CSS的代码的缩写，然后按tab键就可以拓展为完整的代码片段。（如果与已有的快捷键有冲突的话，可以自行在编辑器中将拓展键设为其他快捷键）</p>
+
+<h2 id="语法">语法:</h2>
+
+<h4 id="后代">后代：&gt;</h4>
+
+<p><strong>缩写</strong>：nav&gt;ul&gt;li</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">nav</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">nav</span>&gt;</span>
+</pre>
+
+<h4 id="兄弟">兄弟：+</h4>
+
+<p><strong>缩写</strong>：div+p+bq</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>
+</pre>
+
+<h4 id="上级">上级：^</h4>
+
+<p><strong>缩写</strong>：div+div&gt;p&gt;span+em^bq</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：div+div&gt;p&gt;span+em^^bq</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>
+</pre>
+
+<h4 id="分组">分组：()</h4>
+
+<p><strong>缩写</strong>：div&gt;(header&gt;ul&gt;li*2&gt;a)+footer&gt;p</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">header</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">footer</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：(div&gt;dl&gt;(dt+dd)*3)+footer&gt;p</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">dl</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dt</span>&gt;</span><span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dt</span>&gt;</span><span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dt</span>&gt;</span><span class="tag">&lt;/<span class="title">dt</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">dd</span>&gt;</span><span class="tag">&lt;/<span class="title">dd</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">dl</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">footer</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">footer</span>&gt;</span>
+</pre>
+
+<h4 id="乘法">乘法：*</h4>
+
+<p><strong>缩写</strong>：ul&gt;li*5</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<h4 id="自增符号">自增符号：$</h4>
+
+<p><strong>缩写</strong>：ul&gt;li.item$*5</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item1"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item2"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item3"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item4"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item5"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：h$[title=item$]{Header $}*3</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">h1</span> <span class="attribute">title</span>=<span class="value">"item1"</span>&gt;</span>Header 1<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+<span class="tag">&lt;<span class="title">h2</span> <span class="attribute">title</span>=<span class="value">"item2"</span>&gt;</span>Header 2<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="title">h3</span> <span class="attribute">title</span>=<span class="value">"item3"</span>&gt;</span>Header 3<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：ul&gt;li.item$$$*5</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item001"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item002"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item003"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item004"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item005"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：ul&gt;li.item$@-*5</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item5"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item4"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item3"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item2"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item1"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：ul&gt;li.item$@3*5</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item3"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item4"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item5"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item6"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"item7"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<h4 id="id和类属性">ID和类属性</h4>
+
+<p><strong>缩写</strong>：#header</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"header"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：.title</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：form#search.wide</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">id</span>=<span class="value">"search"</span> <span class="attribute">class</span>=<span class="value">"wide"</span>&gt;</span><span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：p.class1.class2.class3</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"class1 class2 class3"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</pre>
+
+<h4 id="自定义属性">自定义属性</h4>
+
+<p><strong>缩写</strong>：p[title=”Hello world”]</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">title</span>=<span class="value">"Hello world"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：td[rowspan=2 colspan=3 title]</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">td</span> <span class="attribute">rowspan</span>=<span class="value">"2"</span> <span class="attribute">colspan</span>=<span class="value">"3"</span> <span class="attribute">title</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：[a=’value1’ b=”value2”]</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">a</span>=<span class="value">"value1"</span> <span class="attribute">b</span>=<span class="value">"value2"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<h4 id="文本">文本：{}</h4>
+
+<p><strong>缩写</strong>：a{Click me}</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>Click me<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：p&gt;{Click }+a{here}+{ to continue}</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">p</span>&gt;</span>Click <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span>here<span class="tag">&lt;/<span class="title">a</span>&gt;</span> to continue<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</pre>
+
+<h4 id="隐式标签">隐式标签</h4>
+
+<p><strong>缩写</strong>：.class</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"class"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：em&gt;.class</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">em</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"class"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：ul&gt;.class</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"class"</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：table&gt;.row&gt;.col</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">table</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">tr</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">td</span> <span class="attribute">class</span>=<span class="value">"col"</span>&gt;</span><span class="tag">&lt;/<span class="title">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</pre>
+
+<h3 id="html">HTML</h3>
+
+<p><em>所有未知的缩写都会转换成标签，例如，foo → <foo></foo></em></p>
+
+<p><strong>缩写</strong>：!</p>
+
+<pre class="xml"><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：a</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：a:link</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：a:mail</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"mailto:"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：abbr</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">abbr</span> <span class="attribute">title</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">abbr</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：acronym</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">acronym</span> <span class="attribute">title</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">acronym</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：base</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">base</span> <span class="attribute">href</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：basefont</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">basefont</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：br</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：frame</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">frame</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：hr</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">hr</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：bdo</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">bdo</span> <span class="attribute">dir</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">bdo</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：bdo:r</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">bdo</span> <span class="attribute">dir</span>=<span class="value">"rtl"</span>&gt;</span><span class="tag">&lt;/<span class="title">bdo</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：bdo:l</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">bdo</span> <span class="attribute">dir</span>=<span class="value">"ltr"</span>&gt;</span><span class="tag">&lt;/<span class="title">bdo</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：col</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">col</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:css</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"style.css"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:print</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"print.css"</span> <span class="attribute">media</span>=<span class="value">"print"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:favicon</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"shortcut icon"</span> <span class="attribute">type</span>=<span class="value">"image/x-icon"</span> <span class="attribute">href</span>=<span class="value">"favicon.ico"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:touch</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-icon"</span> <span class="attribute">href</span>=<span class="value">"favicon.png"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:rss</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"alternate"</span> <span class="attribute">type</span>=<span class="value">"application/rss+xml"</span> <span class="attribute">title</span>=<span class="value">"RSS"</span> <span class="attribute">href</span>=<span class="value">"rss.xml"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：link:atom</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"alternate"</span> <span class="attribute">type</span>=<span class="value">"application/atom+xml"</span> <span class="attribute">title</span>=<span class="value">"Atom"</span> <span class="attribute">href</span>=<span class="value">"atom.xml"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：meta</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">meta</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：meta:utf</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=UTF-8"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：meta:win</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=windows-1251"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：meta:vp</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：meta:compat</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=7"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：style</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：script</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：script:src</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：img</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：iframe</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">frameborder</span>=<span class="value">"0"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：embed</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">type</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：object</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">object</span> <span class="attribute">data</span>=<span class="value">""</span> <span class="attribute">type</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">object</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：param</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">param</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：map</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">map</span> <span class="attribute">name</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">map</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：area</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">""</span> <span class="attribute">coords</span>=<span class="value">""</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：area:d</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"default"</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：area:c</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"circle"</span> <span class="attribute">coords</span>=<span class="value">""</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：area:r</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"rect"</span> <span class="attribute">coords</span>=<span class="value">""</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：area:p</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">shape</span>=<span class="value">"poly"</span> <span class="attribute">coords</span>=<span class="value">""</span> <span class="attribute">href</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：form</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：form:get</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">""</span> <span class="attribute">method</span>=<span class="value">"get"</span>&gt;</span><span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：form:post</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">""</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span><span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：label</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">label</span> <span class="attribute">for</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：inp</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:hidden</p>
+
+<p><em>别名：input[type=hidden name]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:h</p>
+
+<p><em>别名：input:hidden</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:text, input:t</p>
+
+<p><em>别名：inp</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:search</p>
+
+<p><em>别名：inp[type=search]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"search"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:email</p>
+
+<p><em>别名：inp[type=email]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:url</p>
+
+<p><em>别名：inp[type=url]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"url"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:password</p>
+
+<p><em>别名：inp[type=password]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:p</p>
+
+<p><em>别名：input:password</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:datetime</p>
+
+<p><em>别名：inp[type=datetime]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"datetime"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:date</p>
+
+<p><em>别名：inp[type=date]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"date"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:datetime-local</p>
+
+<p><em>别名：inp[type=datetime-local]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"datetime-local"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:month</p>
+
+<p><em>别名：inp[type=month]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"month"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:week</p>
+
+<p><em>别名：inp[type=week]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"week"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:time</p>
+
+<p><em>别名：inp[type=time]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"time"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:number</p>
+
+<p><em>别名：inp[type=number]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"number"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:color</p>
+
+<p><em>别名：inp[type=color]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"color"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:checkbox</p>
+
+<p><em>别名：inp[type=checkbox]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:c</p>
+
+<p><em>别名：input:checkbox</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:radio</p>
+
+<p><em>别名：inp[type=radio]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:r</p>
+
+<p><em>别名：input:radio</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:range</p>
+
+<p><em>别名：inp[type=range]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"range"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:file</p>
+
+<p><em>别名：inp[type=file]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:f</p>
+
+<p><em>别名：input:file</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"file"</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:submit</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:s</p>
+
+<p><em>别名：input:submit</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:image</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:i</p>
+
+<p><em>别名：input:image</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">alt</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:button</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:b</p>
+
+<p><em>别名：input:button</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：isindex</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">isindex</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：input:reset</p>
+
+<p><em>别名：input:button[type=reset]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"reset"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：select</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">select</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">select</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：option</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">option</span> <span class="attribute">value</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">option</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：textarea</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">id</span>=<span class="value">""</span> <span class="attribute">cols</span>=<span class="value">"30"</span> <span class="attribute">rows</span>=<span class="value">"10"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：menu:context</p>
+
+<p><em>别名：menu[type=context]&gt;</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">menu</span> <span class="attribute">type</span>=<span class="value">"context"</span>&gt;</span><span class="tag">&lt;/<span class="title">menu</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：menu:c</p>
+
+<p><em>别名：menu:context</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">menu</span> <span class="attribute">type</span>=<span class="value">"context"</span>&gt;</span><span class="tag">&lt;/<span class="title">menu</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：menu:toolbar</p>
+
+<p><em>别名：menu[type=toolbar]&gt;</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">menu</span> <span class="attribute">type</span>=<span class="value">"toolbar"</span>&gt;</span><span class="tag">&lt;/<span class="title">menu</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：menu:t</p>
+
+<p><em>别名：menu:toolbar</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">menu</span> <span class="attribute">type</span>=<span class="value">"toolbar"</span>&gt;</span><span class="tag">&lt;/<span class="title">menu</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：video</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：audio</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：html:xml</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：keygen</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">keygen</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：command</p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">command</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：bq</p>
+
+<p><em>别名：blockquote</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">blockquote</span>&gt;</span><span class="tag">&lt;/<span class="title">blockquote</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：acr</p>
+
+<p><em>别名：acronym</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">acronym</span> <span class="attribute">title</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">acronym</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：fig</p>
+
+<p><em>别名：figure</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">figure</span>&gt;</span><span class="tag">&lt;/<span class="title">figure</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：figc</p>
+
+<p><em>别名：figcaption</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">figcaption</span>&gt;</span><span class="tag">&lt;/<span class="title">figcaption</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：ifr</p>
+
+<p><em>别名：iframe</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">iframe</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">frameborder</span>=<span class="value">"0"</span>&gt;</span><span class="tag">&lt;/<span class="title">iframe</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：emb</p>
+
+<p><em>别名：embed</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">embed</span> <span class="attribute">src</span>=<span class="value">""</span> <span class="attribute">type</span>=<span class="value">""</span> /&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：obj</p>
+
+<p><em>别名：object</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">object</span> <span class="attribute">data</span>=<span class="value">""</span> <span class="attribute">type</span>=<span class="value">""</span>&gt;</span><span class="tag">&lt;/<span class="title">object</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：src</p>
+
+<p><em>别名：source</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">source</span>&gt;</span><span class="tag">&lt;/<span class="title">source</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：cap</p>
+
+<p><em>别名：caption</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">caption</span>&gt;</span><span class="tag">&lt;/<span class="title">caption</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：colg</p>
+
+<p><em>别名：colgroup</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">colgroup</span>&gt;</span><span class="tag">&lt;/<span class="title">colgroup</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：fst, fset</p>
+
+<p><em>别名：fieldset</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">fieldset</span>&gt;</span><span class="tag">&lt;/<span class="title">fieldset</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：btn</p>
+
+<p><em>别名：button</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">button</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：btn:b</p>
+
+<p><em>别名：button[type=button]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：btn:r</p>
+
+<p><em>别名：button[type=reset]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"reset"</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+</pre>
+
+<p><strong>缩写</strong>：btn:s</p>
+
+<p><em>别名：button[type=submit]</em></p>
+
+<pre class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+</pre>
+
+<h4 id="关于更多的html以及css的缩写请查看">关于更多的HTML以及CSS的缩写请查看：</h4>
+
+<p><a href="http://www.w3cplus.com/sites/default/files/baiyaimages/CheatSheet.jpg">下载 API表</a><a href="http://docs.emmet.io/cheat-sheet/">直击官网文档</a></p>
+
+<p><strong>特别声明：</strong>文中演示代码来自于官网API：<a href="http://docs.emmet.io/cheat-sheet/">http://docs.emmet.io/cheat-sheet/</a></p>
+
+<p>如需转载，请遵守<a href="http://www.w3cplus.com/page/661.html">W3cplus版权声明</a>，烦请注明出处：<a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html">http://www.w3cplus.com/tools/emmet-cheat-sheet.html</a></p>
+:ET

@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sublime Text应用技巧和诀窍 - TENG">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="
+  sublime学习技巧，存根查询
+
+">
+    
+    <meta property="article:published_time" content="2016-07-19T00:00:00Z">
+    
+    
+    <meta property="article:author" content="Teng">
+    
+    
+    <meta property="article:tag" content="Learning">
+    
+    <meta property="article:tag" content="笔记">
+    
+    <meta property="article:tag" content="编程">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux.jpg">
+    <meta property="og:url" content="http://localhost:4000/2016/07/19/sublime-02/">
+    <meta property="og:site_name" content="TENG">
+    
+    <title>Sublime Text应用技巧和诀窍 - TENG</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2016/07/19/sublime-02/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TENG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/"> about</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-ppt.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-ppt.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Learning" title="Learning">Learning</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%BC%96%E7%A8%8B" title="编程">编程</a>
+                        
+                    </div>
+                    <h1>Sublime Text应用技巧和诀窍</h1>
+                    
+                    <h2 class="subheading">磨刀不误砍柴工</h2>
+                    <span class="meta">Posted by Teng on July 19, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<blockquote>
+  <p>sublime学习技巧，存根查询</p>
+</blockquote>
+
+<p>本文为您提供Sublime Text编辑器的12个技巧和诀窍，深入挖掘这个看似简洁的代码编辑器，背后所隐藏的实现各种高级功能的无限可能。</p>
+
+<p><strong>1) 选择</strong></p>
+
+<p>以下是一些Sublime Text选择文本的快捷键：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command + D</code> 选中一个单词</li>
+  <li><code class="highlighter-rouge">Command + L</code> 选中一行</li>
+  <li><code class="highlighter-rouge">Command + A</code> 全选</li>
+  <li><code class="highlighter-rouge">Ctrl + Command + M</code> 选中括号内所有内容 (编写CSS或JS时非常实用)</li>
+</ul>
+
+<p>Sublime Text还支持一次选中多行的操作，它可以显著提高您的工作效率。有几种方法来执行此功能：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command</code> 按住<code class="highlighter-rouge">Command</code>键再点击想选中的行</li>
+  <li><code class="highlighter-rouge">Command + Ctrl + G</code> (选中部分文本时) 按此键选中所有相同文本</li>
+  <li><code class="highlighter-rouge">Command + D</code> (选中部分文本时) 直接选中下一次出现的该文本</li>
+</ul>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao1.gif" alt="图片描述" /></p>
+
+<p><strong>2) CSS排序</strong></p>
+
+<p>CSS属性的顺序一般不重要，因为无论何种顺序浏览器都能正确渲染。但排序所有的属性还是有助于代码的整洁。在Sublime Text中，选中CSS属性后按F5就可以按字母顺序排序。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao2.gif" alt="图片描述" /></p>
+
+<p>也可以使用 <strong><a href="https://github.com/csscomb/CSScomb-for-Sublime">CSSComb</a></strong> 等第三方插件，更详细的控制排序的方法。</p>
+
+<p><strong>3) 命令面板（Command Palette）</strong></p>
+
+<p>使用命令面板可以快速完成多重任务。按<code class="highlighter-rouge">Command + Shift + P</code>调出面板，键入需要的命令即可。看以下的几个示例：</p>
+
+<p><strong>▼ 重命名文件</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao3.jpg" alt="rename-file" /></p>
+
+<p><strong>▼ 设置文件为HTML语法</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao4.jpg" alt="syntax-html" /></p>
+
+<p><strong>▼ 插入代码片段</strong><br />
+<img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao5.jpg" alt="insert-snippet" /></p>
+
+<p><strong>4) 切换标签页与工程</strong></p>
+
+<p>在同时打开多个标签页时，可以用以下的热键切换：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Command + T</code> 列出所有的标签页</li>
+  <li><code class="highlighter-rouge">Command + Shift + ]</code> 下一标签页</li>
+  <li><code class="highlighter-rouge">Command + Shift + [</code> 上一标签页</li>
+  <li><code class="highlighter-rouge">Command + Ctrl + P</code> 切换侧边栏显示的工程</li>
+</ul>
+
+<p><strong>5) 跨文件编辑</strong></p>
+
+<p>同一个编辑操作可以在多个文件中同时重复。举个例子，多个文件中有同一段代码时，可用以下的步骤快速编辑：</p>
+
+<ol>
+  <li>按<code class="highlighter-rouge">Command + Shift + F</code>在<code class="highlighter-rouge">Find</code>框中输入待查找的代码。可按<code class="highlighter-rouge">Command + E</code>快速使用选择中的代码段。</li>
+  <li>在<code class="highlighter-rouge">Where</code>框中指定需要查找的文件范围，或填写<code class="highlighter-rouge">&lt;open files&gt;</code>表示查找目前打开的文件。</li>
+  <li>在<code class="highlighter-rouge">Replace</code>框中输入要替换成的代码，按<code class="highlighter-rouge">Replace</code>按钮批量替换。</li>
+</ol>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao6.jpg" alt="find-search-fields" /></p>
+
+<p><strong>6) 文件爬虫</strong></p>
+
+<p>按<code class="highlighter-rouge">Command + R</code>可以列出文档中所有的CSS选择器。可以选择并立刻跳转查看。这个操作比使用一般的“查找”功能快得多。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao7.jpg" alt="file-crawling" /></p>
+
+<p><strong>7) 拼写检查</strong></p>
+
+<p>如果你经常使用Sublime Text从事英文创作，那么启用拼写检查就非常有用处了。选择<code class="highlighter-rouge">Preferences &gt; Settings – User</code>菜单，添加以下代码：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"spell_check": true,    
+</code></pre></div></div>
+
+<p><strong>8) 增强侧边栏</strong></p>
+
+<p><strong><a href="https://github.com/titoBouzout/SideBarEnhancements/tree/st3">SideBarEnhancements</a></strong>插件有效地改进了Sublime Text的侧边栏。安装插件后在侧边栏上点击右键，可以找到一下新功能：在资源管理器中打开、新建文件、新建文件夹、以…打开、在浏览器中打开。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao8.jpg" alt="图片描述" /></p>
+
+<p>注：在浏览器中打开的热键是<code class="highlighter-rouge">F12</code>。</p>
+
+<p><strong>9) 更换主题</strong></p>
+
+<p>Sublime Text的外观主题可以更换。<strong><a href="https://github.com/buymeasoda/soda-theme">Soda Theme</a></strong>就是一个不错的主题，可以在包管理器中安装。</p>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao9.jpg" alt="soda-theme" /></p>
+
+<p>如果要安装的主题并不在在线软件仓库中，也可以手动安装：</p>
+
+<ol>
+  <li>下载并解压缩主题包</li>
+  <li>点击菜单 <code class="highlighter-rouge">Preferences &gt; Browse Packages</code>…</li>
+  <li>把主题文件夹复制到<code class="highlighter-rouge">Packages</code>文件夹中.</li>
+  <li>点击菜单 <code class="highlighter-rouge">Preferences &gt; Settings – Users</code> 并加入以下代码：<code class="highlighter-rouge">"theme": "Soda Light.sublime-theme"</code></li>
+</ol>
+
+<p><strong>10) 更换Sublime Text程序图标</strong></p>
+
+<p>不仅主题可以更换，图标也可以。在<strong><a href="https://dribbble.com/">Dribbble</a></strong>上有大量重新设计的Sublime Text精美图标。更换方法：</p>
+
+<ol>
+  <li>下载一个图标，有<code class="highlighter-rouge">.icns</code>格式的最好。如果没有，用<strong><a href="https://iconverticons.com/online/">iConvert</a></strong>转换之。</li>
+  <li>终端执行：<code class="highlighter-rouge">open /Applications/Sublime\ Text.app/Contents/Resources/</code></li>
+  <li>替换<code class="highlighter-rouge">Sublime Text 3.icns</code>或<code class="highlighter-rouge">Sublime Text 2.icns</code>文件。</li>
+</ol>
+
+<p><img src="http://7xtgob.com2.z0.glb.clouddn.com/sublime-jiqiao10.jpg" alt="sublime-text-icon" /></p>
+
+<p><strong>11) 同步选项</strong></p>
+
+<p>如果在多台计算机上工作，同步选项设置应该是一个好主意。我们借用Dropbox完成这一任务。</p>
+
+<p>首先在终端中运行以下命令上传设置文件：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir $HOME/Dropbox/sublime-text-3/  
+mv "$HOME/Library/Application Support/Sublime Text 3/Packages" "$HOME/Dropbox/sublime-text-3/"  
+mv "$HOME/Library/Application Support/Sublime Text 3/Installed Packages" "$HOME/Dropbox/sublime-text-3/"  
+</code></pre></div></div>
+
+<p>然后在所有需要同步的计算机上运行以下命令下载设置：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DSTPATH="$HOME/Library/Application Support/Sublime Text 3"  
+DROPBOX_PATH="$HOME/Dropbox/sublime-text-3"  
+rm -rf "$DSTPATH/Installed Packages"  
+rm -rf "$DSTPATH/Packages"  
+mkdir -p "$DSTPATH"  
+ln -s "$DROPBOX_PATH/Packages" "$DSTPATH/Packages"  
+ln -s "$DROPBOX_PATH/Installed Packages" "$DSTPATH/Installed Packages"  
+</code></pre></div></div>
+
+<p><strong>12) 可点击的URL</strong></p>
+
+<p>使用小插件<strong><a href="https://github.com/leonid-shevtsov/ClickableUrls_SublimeText">ClickableURLs</a></strong>可以让文件中的URL能够点击。</p>
+
+<blockquote>
+  <p>原文：<strong><a href="http://www.hongkiat.com/blog/sublime-text-tips/">12 Most-Wanted Sublime Text Tips and Tricks</a></strong><br />
+编译：SegmentFault<br />
+原文地址：<a href="http://segmentfault.com/a/1190000000505218">http://segmentfault.com/a/1190000000505218</a></p>
+</blockquote>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/07/18/kaili/" data-toggle="tooltip" data-placement="top" title="《路边野餐》：梦境和现实的杂乱混合">
+                        Previous<br>
+                        <span>《路边野餐》：梦境和现实的杂乱混合</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/07/21/tiaozheng/" data-toggle="tooltip" data-placement="top" title="BLOG的一些调整">
+                        Next<br>
+                        <span>BLOG的一些调整</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0095" 
+                    href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="随想录"
+                    rel="118">随想录</a>
+        
+                <a data-sort="0149" 
+                    href="/archive/?tag=%E7%9E%8E%E6%89%AF"
+                    title="瞎扯"
+                    rel="64">瞎扯</a>
+        
+                <a data-sort="0152" 
+                    href="/archive/?tag=Thinking"
+                    title="Thinking"
+                    rel="61">Thinking</a>
+        
+                <a data-sort="0160" 
+                    href="/archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="53">笔记</a>
+        
+                <a data-sort="0161" 
+                    href="/archive/?tag=%E8%AF%BB%E4%B9%A6"
+                    title="读书"
+                    rel="52">读书</a>
+        
+                <a data-sort="0163" 
+                    href="/archive/?tag=%E6%84%9F%E5%8F%B9"
+                    title="感叹"
+                    rel="50">感叹</a>
+        
+                <a data-sort="0170" 
+                    href="/archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="43">生活</a>
+        
+                <a data-sort="0173" 
+                    href="/archive/?tag=lofter"
+                    title="lofter"
+                    rel="40">lofter</a>
+        
+                <a data-sort="0184" 
+                    href="/archive/?tag=%E5%AD%A6%E4%B9%A0"
+                    title="学习"
+                    rel="29">学习</a>
+        
+                <a data-sort="0186" 
+                    href="/archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="27">产品</a>
+        
+                <a data-sort="0190" 
+                    href="/archive/?tag=%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86"
+                    title="泰国杂忆"
+                    rel="23">泰国杂忆</a>
+        
+                <a data-sort="0191" 
+                    href="/archive/?tag=%E6%84%9F%E6%85%A8"
+                    title="感慨"
+                    rel="22">感慨</a>
+        
+                <a data-sort="0194" 
+                    href="/archive/?tag=%E8%81%8C%E5%9C%BA"
+                    title="职场"
+                    rel="19">职场</a>
+        
+                <a data-sort="0197" 
+                    href="/archive/?tag=%E6%AD%A3%E7%BB%8F"
+                    title="正经"
+                    rel="16">正经</a>
+        
+                <a data-sort="0199" 
+                    href="/archive/?tag=%E7%94%B5%E5%BD%B1"
+                    title="电影"
+                    rel="14">电影</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E5%8E%9F%E5%88%99"
+                    title="原则"
+                    rel="12">原则</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E7%BC%96%E7%A8%8B"
+                    title="编程"
+                    rel="12">编程</a>
+        
+                <a data-sort="0203" 
+                    href="/archive/?tag=Learning"
+                    title="Learning"
+                    rel="10">Learning</a>
+        
+                <a data-sort="0206" 
+                    href="/archive/?tag=%E5%8D%9A%E5%AE%A2"
+                    title="博客"
+                    rel="7">博客</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=%E6%97%85%E8%A1%8C"
+                    title="旅行"
+                    rel="3">旅行</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=vlog"
+                    title="vlog"
+                    rel="3">vlog
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://wdxtub.com/">小土刀</a></li>
+  
+  <li><a href="http://mindhacks.cn">暗时间</a></li>
+  
+  <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+  
+  <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+  
+  <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; TENG 2019
+                    <br>
+                     向世界保持学习力 | Powered by <a href="https://tengblog.com">TengBlog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-79793350-1';
+    var _gaDomain = 'tengblog.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '6aa02cf6d8ee848133e919e39e594a3e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

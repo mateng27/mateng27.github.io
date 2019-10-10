@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="《老友记》里的污梗 - TENG">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="《老友记》里的污梗
+">
+    
+    <meta property="article:published_time" content="2017-02-13T00:00:00Z">
+    
+    
+    <meta property="article:author" content="Teng">
+    
+    
+    <meta property="article:tag" content="随想录">
+    
+    <meta property="article:tag" content="笔记">
+    
+    <meta property="article:tag" content="生活">
+    
+    <meta property="article:tag" content="学习">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux.jpg">
+    <meta property="og:url" content="http://localhost:4000/2017/02/13/laoyouji/">
+    <meta property="og:site_name" content="TENG">
+    
+    <title>《老友记》里的污梗 - TENG</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2017/02/13/laoyouji/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TENG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/"> about</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-dianying.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-dianying.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95" title="随想录">随想录</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%94%9F%E6%B4%BB" title="生活">生活</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E5%AD%A6%E4%B9%A0" title="学习">学习</a>
+                        
+                    </div>
+                    <h1>《老友记》里的污梗</h1>
+                    
+                    <h2 class="subheading">一个留存，以后对照欣赏</h2>
+                    <span class="meta">Posted by Teng on February 13, 2017</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<h2 id="老友记里的污梗">《老友记》里的污梗</h2>
+
+<blockquote>
+  <p>全文来自谷大白话的付费回答，留存，以后再看美剧时对照。</p>
+</blockquote>
+
+<p>《老友记》里有很多被人忽略的黄暴段子。甚至时常看到有人说“F6是纯洁的喜剧”“2.5Men太三俗，你看人家老友记多健康”。这种误解的主要原因是，《老友记》年代太早，翻译版本都比较粗糙，不少三俗笑点被丢掉。比如S3E23里的一段：</p>
+
+<p>Ross: I was in the shower, and I felt something. Chandler: Was it like a sneeze, only better? 『我洗澡时忽有所感。』『是不是像打了个喷嚏，但比那棒多了？』 这句字面上看起来没什么，但观众为啥会笑呢？因为小钱钱的意思并非『打喷嚏』而是『打飞机』。</p>
+
+<p>类似的黄暴段子我总结过80多个。这里挑比较好玩的30个列出来。由于篇幅有限，我直接给关键词答案。</p>
+
+<p>S2E19</p>
+
+<p>Rachel: How do expect me to grow, if you won’t let me blow?</p>
+
+<p>Ross: You know I don’t have a problem with that.</p>
+
+<p>Rachel说的是『吹风』Ross指的是『口交』</p>
+
+<p>S2E06</p>
+
+<p>Joey: My Uncle Sal has a really big tongue.</p>
+
+<p>Chandler: Is he the one with the beautiful wife?</p>
+
+<p>小钱钱说Joey叔叔『口活好』</p>
+
+<p>S2E04</p>
+
+<p>Chandler: This is the craziest typing test I’ve ever seen.</p>
+
+<p>Monica: She better get the job.</p>
+
+<p>Ross: Looks to me like he’s the one getting the job.</p>
+
+<p>Ross说的是『口交』</p>
+
+<p>S1E01</p>
+
+<p>Ross: She always drank it out of the can. I should have known it.</p>
+
+<p>Ross说『她喝饮料都是直接对罐喝，我早就该看出(她是拉拉)』。这里暗示的是给女性『口交』。</p>
+
+<p>S6E09</p>
+
+<p>Ross: Oh my God. The pages are stuck together.</p>
+
+<p>Joey: Chandler!</p>
+
+<p>Joey的意思是『打飞机』导致书页粘在一起。</p>
+
+<p>S10E13</p>
+
+<p>Monica: Well, it turns out that Erica didn’t pay much attention in sex ed class, because the thing she did with that prison guy, it’d be pretty hard to make a baby that way.</p>
+
+<p>Chandler: Oh God, what was it? The thing that we hardly ever do or the thing we never do?</p>
+
+<p>Monica: The thing we never do.</p>
+
+<p>Chandler: Shovelly Joe.</p>
+
+<p>莫妮卡说的是『爆菊花』</p>
+
+<p>S3E20</p>
+
+<p>Monica: But no, it was to be looked at but never played with.</p>
+
+<p>Chandler: My grandmother used to say that exact same thing to me.</p>
+
+<p>莫妮卡在说玩偶屋。小钱钱说的是『小丁日』。</p>
+
+<p>S3E08</p>
+
+<p>Joey: Remember, something this big and long can be very difficult to maneuver. Fortunately, I have a lot of experience in that area.</p>
+
+<p>看似在说筷子，其实Joey在夸自己丁日长。</p>
+
+<p>S6E14</p>
+
+<p>Chandler: You didn’t get more movies that are gonna have us reaching for the tissues all night long did you?</p>
+
+<p>Joey: Sort of.</p>
+
+<p>需要纸巾的电影，你猜是言情片还是A片？</p>
+
+<p>S1E21</p>
+
+<p>Joey的艺名Holden McGroin，『抓我下体』。</p>
+
+<p>——————</p>
+
+<p>S5E16</p>
+
+<p>Rachel: Whoa, what’s that?</p>
+
+<p>Ross: Oh, that’s me.</p>
+
+<p>Rachel: Wow. You certainly think a lot of yourself.</p>
+
+<p>Ross: No, that’s my arm.</p>
+
+<p>Chandler: Oh, I see. I thought you just really, really liked your new couch.</p>
+
+<p>勃起梗。Rachel认为Ross吹牛X，小钱钱嘲讽Ross看到新沙发欲火焚身。</p>
+
+<p>S4E01</p>
+
+<p>Rachel: Hey, just so you know, it’s not that common, it doesn’t happen to every guy, and it is a big deal!</p>
+
+<p>Chandler: I knew it!</p>
+
+<p>这是『We were on a break』Ross摔门而去那段里面让很多人费解的一段黑话。Rachel到底在黑Ross什么？而小钱钱怎么又深有同感了？其实这里说的是『不举』。</p>
+
+<p>S1E04</p>
+
+<p>Monica: Hey Joey, what would you do if you were omnipotent?</p>
+
+<p>Joey: Probably kill myself.</p>
+
+<p>Monica: Excuse me?</p>
+
+<p>Joey: Hey, if little Joey’s dead, then I got no reason to live.</p>
+
+<p>Ross: Joey, omnipotent.</p>
+
+<p>Joey: You are? Ross, I’m so sorry. I had no idea. I thought it was like a theoretical question.</p>
+
+<p>Joey一直听成I’m impotent.『我阳痿』</p>
+
+<p>S5E13</p>
+
+<p>Joey: But it is odd how a woman’s purse looks good on me, a man. Rachel: Exactly, unisex!</p>
+
+<p>Joey: Maybe you need sex. I had sex a couple days ago.</p>
+
+<p>Rachel: No, no, Joey. U-N-I-sex.</p>
+
+<p>Joey: Well, I ain’t gonna say no to that.</p>
+
+<p>谐音梗You need sex. You and I sex.</p>
+
+<p>S2E14</p>
+
+<p>Joey: Oh, and do you have any idea what this will do for your sex life?</p>
+
+<p>Chandler: Well, it’ll probably slow it down at first, but once I get used to the extra weight I’ll be back on track.</p>
+
+<p>Joey说的是手镯能帮钱钱泡妞。小钱钱说的是『打飞机』。</p>
+
+<p>S3E08</p>
+
+<p>Rachel: If it’s not a headboard, it’s just not worth it.</p>
+
+<p>Rachel不小心撞了头，她说『如果不是床头板的话，那撞得就太不值了』。指的是嘿咻过程中嘿得太嗨，女生脑袋撞到床头板。</p>
+
+<p>S4E07</p>
+
+<p>Rachel: I just had a great time with my self.</p>
+
+<p>Chandler: Well, this could be a good story.</p>
+
+<p>小钱钱说的是『自慰』</p>
+
+<p>S2E15</p>
+
+<p>Ross: Australopithecus was never fully erect.</p>
+
+<p>Chandler: Maybe he was nervous.</p>
+
+<p>跟Homo erectus那个梗接近，这里小钱钱把erect当成了勃起。</p>
+
+<p>S4E02</p>
+
+<p>Chandler: What the hell happened? How are you locked in there? Where the hell’s all of our stuff?</p>
+
+<p>Joey: Well, this guy came by to look at the unit, and he said he didn’t think it wasn’t big enough to fit a grown man.</p>
+
+<p>Chandler: So, you got in voluntarily?</p>
+
+<p>Joey: I was trying to make a sale. You know, if I ever run into that guy again, you know what I’m going to do?</p>
+
+<p>Chandler: Bend over?</p>
+
+<p>小钱钱的意思是『附身献菊花』</p>
+
+<p>S6E03</p>
+
+<p>Joey: I’m going to say a word, and then you say the first thing that comes to mind.</p>
+
+<p>Girl: I can do that.</p>
+
+<p>Joey: Okay. Here we go. Pillow.</p>
+
+<p>Girl: Fight.</p>
+
+<p>Joey: Very good. Okay, G.</p>
+
+<p>Girl: String?</p>
+
+<p>Joey: Excellent. Okay, doggy.</p>
+
+<p>Girl: Kitten?</p>
+
+<p>Joey: Oooh, sorry. So close though. But you know, bye bye.</p>
+
+<p>这是Joey面试室友那一段。女生回答kitten错误的原因是，正确答案是style，doggy style，后入式。</p>
+
+<p>————</p>
+
+<p>S2E15</p>
+
+<p>Rachel: Oh honey, that’s okay. It doesn’t matter.</p>
+
+<p>Ross: What? Oh no, you just rolled over the juice box.</p>
+
+<p>Rachel: Oh, thank God.</p>
+
+<p>两人第一次亲热。Rachel以为Ross太激动『早泄』了。</p>
+
+<p>S4E11</p>
+
+<p>莫妮卡seven那段结束之后。几个人都默默回到自己房间。去『打飞机』了。</p>
+
+<p>S7E03</p>
+
+<p>Rachel: How do you get the main sail up?</p>
+
+<p>Joey: Uh, rub it?</p>
+
+<p>Joey听到up就想到三俗。『撸它?』</p>
+
+<p>S5E11</p>
+
+<p>Ross: I’m gonna make myself happy.</p>
+
+<p>Chandler: Do you want us to leave the room?</p>
+
+<p>Ross说想让自己开心。小钱钱说的是他要『打飞机』。</p>
+
+<p>S8E24</p>
+
+<p>Cliff: Wow. I usually get to know a girl a little better before I let her spoon me.</p>
+
+<p>Phoebe: Relax, it’s not like we’re forking.</p>
+
+<p>菲比的f-word谐音梗。</p>
+
+<p>S4E07</p>
+
+<p>Chandler: Come in, have a seat. Bow or stern?</p>
+
+<p>Kathy: I don’t really have a preference. You?</p>
+
+<p>Chandler: I like it in the stern. Of the boat.</p>
+
+<p>bow和stern是船头船尾。这里小钱钱又三俗了『我喜欢后面』。</p>
+
+<p>S4E24</p>
+
+<p>Judy: Oh sorry we’re late. My fault. I insisted on riding the tube.</p>
+
+<p>Jack: Judy. The kids.</p>
+
+<p>Judy: Jack, that’s what they call the subway.</p>
+
+<p>莫妮卡他妈说的是『坐地铁』，他爸想的是『啪啪啪』。tube也有管子的意思。</p>
+
+<p>S1E14</p>
+
+<p>Pheobe: And now we need the semen of a righteous man.</p>
+
+<p>Rachael: Well, if we had that we wouldn’t be doing the ritual in the first place.</p>
+
+<p>几个闺蜜在求桃花运。菲比说需要正直好男人的精液。Rachel说，咱要是能搞到这玩意，哪还用求桃花啊！</p>
+
+<p>S2E21 Multi-Meaning Tattoo</p>
+
+<p>Monica: You know, my motto is ’get out before they go down.’</p>
+
+<p>Joey: That is so not my motto.</p>
+
+<p>Joey的意思是先睡了再跑</p>
+
+<p>S2E11</p>
+
+<p>Monica [to Ross]: All right, ball a melon!</p>
+
+<p>Chandler: How come I’m stuck dicing when he gets to ball a melon?</p>
+
+<p>小钱钱抱怨Ross的工作比他的好。ball a melon字面意思是给蜜瓜挖成球。三俗意思melon是咪咪，所以这里也暗示『乳交』。</p>
+
+<p>类似的还有很多，有些甚至没有台词，只靠表情和动作就能黄暴了。表情比如某次Rachel问Ross：Hey, you know what we never did? Ross立刻欣喜得两眼放光，然后Rachel说: Oh, no. Not that. 动作比如，用手来比划丁日大小那次。《老友记》编剧曾经表示，他们每天坐在一起都在想黄段子，以及怎样把黄段子巧妙地放进台词。所以只要用心去找，你肯定还能发现很多最开始看时错过的精彩。</p>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2017/02/09/adobe/" data-toggle="tooltip" data-placement="top" title="第一次使用正版 Adobe">
+                        Previous<br>
+                        <span>第一次使用正版 Adobe</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/02/14/jianli/" data-toggle="tooltip" data-placement="top" title="做好准备，随时求职">
+                        Next<br>
+                        <span>做好准备，随时求职</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0095" 
+                    href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="随想录"
+                    rel="118">随想录</a>
+        
+                <a data-sort="0149" 
+                    href="/archive/?tag=%E7%9E%8E%E6%89%AF"
+                    title="瞎扯"
+                    rel="64">瞎扯</a>
+        
+                <a data-sort="0152" 
+                    href="/archive/?tag=Thinking"
+                    title="Thinking"
+                    rel="61">Thinking</a>
+        
+                <a data-sort="0160" 
+                    href="/archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="53">笔记</a>
+        
+                <a data-sort="0161" 
+                    href="/archive/?tag=%E8%AF%BB%E4%B9%A6"
+                    title="读书"
+                    rel="52">读书</a>
+        
+                <a data-sort="0163" 
+                    href="/archive/?tag=%E6%84%9F%E5%8F%B9"
+                    title="感叹"
+                    rel="50">感叹</a>
+        
+                <a data-sort="0170" 
+                    href="/archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="43">生活</a>
+        
+                <a data-sort="0173" 
+                    href="/archive/?tag=lofter"
+                    title="lofter"
+                    rel="40">lofter</a>
+        
+                <a data-sort="0184" 
+                    href="/archive/?tag=%E5%AD%A6%E4%B9%A0"
+                    title="学习"
+                    rel="29">学习</a>
+        
+                <a data-sort="0186" 
+                    href="/archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="27">产品</a>
+        
+                <a data-sort="0190" 
+                    href="/archive/?tag=%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86"
+                    title="泰国杂忆"
+                    rel="23">泰国杂忆</a>
+        
+                <a data-sort="0191" 
+                    href="/archive/?tag=%E6%84%9F%E6%85%A8"
+                    title="感慨"
+                    rel="22">感慨</a>
+        
+                <a data-sort="0194" 
+                    href="/archive/?tag=%E8%81%8C%E5%9C%BA"
+                    title="职场"
+                    rel="19">职场</a>
+        
+                <a data-sort="0197" 
+                    href="/archive/?tag=%E6%AD%A3%E7%BB%8F"
+                    title="正经"
+                    rel="16">正经</a>
+        
+                <a data-sort="0199" 
+                    href="/archive/?tag=%E7%94%B5%E5%BD%B1"
+                    title="电影"
+                    rel="14">电影</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E5%8E%9F%E5%88%99"
+                    title="原则"
+                    rel="12">原则</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E7%BC%96%E7%A8%8B"
+                    title="编程"
+                    rel="12">编程</a>
+        
+                <a data-sort="0203" 
+                    href="/archive/?tag=Learning"
+                    title="Learning"
+                    rel="10">Learning</a>
+        
+                <a data-sort="0206" 
+                    href="/archive/?tag=%E5%8D%9A%E5%AE%A2"
+                    title="博客"
+                    rel="7">博客</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=%E6%97%85%E8%A1%8C"
+                    title="旅行"
+                    rel="3">旅行</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=vlog"
+                    title="vlog"
+                    rel="3">vlog
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://wdxtub.com/">小土刀</a></li>
+  
+  <li><a href="http://mindhacks.cn">暗时间</a></li>
+  
+  <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+  
+  <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+  
+  <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; TENG 2019
+                    <br>
+                     向世界保持学习力 | Powered by <a href="https://tengblog.com">TengBlog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-79793350-1';
+    var _gaDomain = 'tengblog.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '6aa02cf6d8ee848133e919e39e594a3e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

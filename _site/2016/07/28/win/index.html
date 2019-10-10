@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于学习与阅读、进化与技能 | mateng,马腾，Mayongtao，马永涛，社交爱好者 ，策划，电影，产品，泰国| 这里是 @腾腾madao 的个人博客，只想帮我自己进化。">
+    <meta name="keywords"  content="马腾, 不是马化腾, tengblog, 马腾的博客, 传播, 博客, 个人网站, 互联网, 前端, 设计, 产品，电影，广告">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="win操盘手 - TENG">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="
+  慢慢真心觉得，我才刚刚会有点win系统的操作，也慢慢体会到了便利。虽然心里还是换个其它的系统，不过它已经让我惊叹。
+
+  今天有学了下新的快捷键，感觉以前的自己简直笨死了。记录下新的组合，以后检索。
+
+">
+    
+    <meta property="article:published_time" content="2016-07-28T00:00:00Z">
+    
+    
+    <meta property="article:author" content="Teng">
+    
+    
+    <meta property="article:tag" content="Learning">
+    
+    <meta property="article:tag" content="Thinking">
+    
+    <meta property="article:tag" content="笔记">
+    
+    <meta property="article:tag" content="职场">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/avatar-hux.jpg">
+    <meta property="og:url" content="http://localhost:4000/2016/07/28/win/">
+    <meta property="og:site_name" content="TENG">
+    
+    <title>win操盘手 - TENG</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2016/07/28/win/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TENG</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/"> about</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/project/">Project</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/post-bg-win.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/post-bg-win.jpg');
+        background: ;
+    }
+
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=Learning" title="Learning">Learning</a>
+                        
+                        <a class="tag" href="/archive/?tag=Thinking" title="Thinking">Thinking</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E7%AC%94%E8%AE%B0" title="笔记">笔记</a>
+                        
+                        <a class="tag" href="/archive/?tag=%E8%81%8C%E5%9C%BA" title="职场">职场</a>
+                        
+                    </div>
+                    <h1>win操盘手</h1>
+                    
+                    <h2 class="subheading">快捷键真的是效率利器</h2>
+                    <span class="meta">Posted by Teng on July 28, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+				<blockquote>
+  <p>慢慢真心觉得，我才刚刚会有点win系统的操作，也慢慢体会到了便利。虽然心里还是换个其它的系统，不过它已经让我惊叹。</p>
+
+  <p>今天有学了下新的快捷键，感觉以前的自己简直笨死了。记录下新的组合，以后检索。</p>
+</blockquote>
+
+<p><img src="http://7xtgob.com1.z0.glb.clouddn.com/16-7-28/31246863.jpg" alt="" /></p>
+
+<h2 id="win键">win键</h2>
+
+<p>Win+E：打开我的电脑</p>
+
+<p>Win+F：搜索文件</p>
+
+<p>Win+D：显示桌面</p>
+
+<p>Win+M：最小化所有窗口</p>
+
+<p>Win + Pause：显示系统属性对话框</p>
+
+<p>Win + L：锁定您的计算机或切换用户</p>
+
+<p>Win + R：打开运行对话框</p>
+
+<p>Win + T：切换任务栏上的程序(感觉是和alt+ESC 一样 )</p>
+
+<p>Win + P：选择一个演示文稿显示模式</p>
+
+<p>Win + G：循环切换侧边栏的小工具</p>
+
+<p>Win + U：打开轻松访问中心</p>
+
+<p>Ctrl + Win + F：搜索计算机(如果您在网络上)</p>
+
+<p>Win + SHIFT + M：还原最小化窗口到桌面上</p>
+
+<p>Win + ←：最大化到窗口左侧的屏幕上</p>
+
+<p>Win + →：最大化窗口到右侧的屏幕上</p>
+
+<p>Win + ↑：最大化窗口</p>
+
+<p>Win + ↓：最小化窗口</p>
+
+<p>Win + Home：最小化所有窗口，除了当前激活窗口</p>
+
+<p>Win+ SHIFT + ↑：拉伸窗口的到屏幕的顶部和底部</p>
+
+<p>Win+ SHIFT + →/←：移动一个窗口，从一个显示器到另一个</p>
+
+<p>Win + TAB：循环切换任务栏上的程序并使用的Aero三维效果</p>
+
+<p>Ctrl + Win + TAB：使用方向键来循环循环切换任务栏上的程序，并使用的Aero三维效果</p>
+
+<p>Ctrl + Win + B：切换到在通知区域中显示信息的程序</p>
+
+<p>Shift + Win +数字：让位于任务栏指定位置(按下的数字作为序号)的程序，新开一个实例</p>
+
+<p>Ctrl + Win + 数字：让位于任务栏指定位置(按下的数字作为序号)
+的程序，切换到上一次的活动窗口</p>
+
+<p>ALT + Win + 数字：让位于任务栏指定位置(按下的数字作为序号)
+的程序，显示跳转清单。</p>
+
+<h2 id="其它组合键">其它组合键</h2>
+
+<p>常规(通用)的键盘快捷方式：</p>
+
+<h3 id="f1-显示帮助">F1 显示帮助</h3>
+
+<p>Ctrl+Shift+Esc 打开任务管理器</p>
+
+<p>Ctrl+A 全选</p>
+
+<p>Ctrl+C(或 Ctrl+Insert) 复制选择的项目</p>
+
+<p>Ctrl+X 剪切选择的项目</p>
+
+<p>Ctrl+V(或 Shift+Insert) 粘贴选择的项目</p>
+
+<p>Ctrl+Z 撤消操作</p>
+
+<p>Ctrl+Y 重新执行某项操作</p>
+
+<p>Delete(或 Ctrl+D) 删除所选项目并将其移动到“回收站”</p>
+
+<p>Shift+Delete 不先将所选项目移动到“回收站”而直接将其删除</p>
+
+<h3 id="f2-重命名选定项目">F2 重命名选定项目</h3>
+
+<p>Ctrl+向右键 将光标移动到下一个字词的起始处</p>
+
+<p>Ctrl+向左键 将光标移动到上一个字词的起始处</p>
+
+<p>Ctrl+向下键 将光标移动到下一个段落的起始处</p>
+
+<p>Ctrl+向上键 将光标移动到上一个段落的起始处</p>
+
+<p>Ctrl+Shift 加某个箭头键 选择一块文本</p>
+
+<p>Shift 加任意箭头键 在窗口中或桌面上选择多个项目，或者在文档中选择文本</p>
+
+<p>Ctrl 加任意箭头键+空格键 选择窗口中或桌面上的多个单个项目</p>
+
+<p>Ctrl+A 选择文档或窗口中的所有项目</p>
+
+<h3 id="f3-搜索文件或文件夹">F3 搜索文件或文件夹</h3>
+
+<p>Alt+Enter 显示所选项的属性</p>
+
+<p>Alt+F4 关闭活动项目或者退出活动程序</p>
+
+<p>Alt+空格键 为活动窗口打开快捷方式菜单</p>
+
+<p>Ctrl+F4 关闭活动文档(在允许同时打开多个文档的程序中)</p>
+
+<p>Ctrl+Alt+Tab 使用箭头键在打开的项目之间切换</p>
+
+<p>Ctrl+鼠标滚轮 更改桌面上的图标大小</p>
+
+<p>Win键 + Tab 使用 Aero Flip 3-D 循环切换任务栏上的程序</p>
+
+<p>Ctrl + Win键 + Tab 通过 Aero Flip 3-D 使用箭头键循环切换任务栏上的程序</p>
+
+<p>Alt+Esc 以项目打开的顺序循环切换项目</p>
+
+<p>F6 在窗口中或桌面上循环切换屏幕元素</p>
+
+<h3 id="f4-在-win资源管理器中显示地址栏列表">F4 在 Win资源管理器中显示地址栏列表</h3>
+
+<p>Shift+F10 显示选定项目的快捷菜单</p>
+
+<p>Ctrl+Esc 打开“开始”菜单</p>
+
+<p>Alt+加下划线的字母 显示相应的菜单</p>
+
+<p>Alt+加下划线的字母 执行菜单命令(或其他有下划线的命令)</p>
+
+<p>F10 激活活动程序中的菜单栏</p>
+
+<p>向右键 打开右侧的下一个菜单或者打开子菜单</p>
+
+<p>向左键 打开左侧的下一个菜单或者关闭子菜单</p>
+
+<h3 id="f5或-ctrlr-刷新活动窗口">F5(或 Ctrl+R) 刷新活动窗口</h3>
+
+<p>Alt+向上键 在 Win资源管理器中查看上一级文件夹</p>
+
+<p>Esc 取消当前任务</p>
+
+<p>Win资源管理器中的快捷键</p>
+
+<p>Ctrl+N 打开新窗口</p>
+
+<p>Ctrl+W 关闭当前窗口</p>
+
+<p>Ctrl+Shift+N 新建文件夹</p>
+
+<p>End 显示活动窗口的底端</p>
+
+<p>Home 显示活动窗口的顶端</p>
+
+<h3 id="f11-最大化或最小化活动窗口">F11 最大化或最小化活动窗口</h3>
+
+<p>Ctrl+句点 顺时针旋转图片</p>
+
+<p>Ctrl+逗号 逆时针旋转图片</p>
+
+<p>Num Lock+数字键盘上的星号 (*) 显示所选文件夹下的所有子文件夹</p>
+
+<p>Num Lock+数字键盘上的加号 (+) 显示所选文件夹的内容</p>
+
+<p>Num Lock+数字键盘上的减号 (-) 折叠选定的文件夹</p>
+
+<p>向左键 折叠当前选项(如果它处于展开状态)，或者选择其父文件夹</p>
+
+<h3 id="altenter-打开所选项目的属性对话框">Alt+Enter 打开所选项目的“属性”对话框</h3>
+
+<p>Alt+P 显示预览窗格</p>
+
+<p>Alt+向左键 查看上一个文件夹</p>
+
+<p>Backspace (退格键) 向上，返回父文件夹</p>
+
+<p>向右键 显示当前选项(如果它处于折叠状态)，或者选择第一个子文件夹</p>
+
+<p>Alt+向右键 查看下一个文件夹</p>
+
+<p>Alt+向上键 查看父文件夹</p>
+
+<p>Ctrl+Shift+E 显示所选文件夹上面的所有文件夹</p>
+
+<p>Ctrl+鼠标滚轮 更改文件和文件夹图标的大小和外观</p>
+
+<p>Alt+D 选择地址栏</p>
+
+<p>Ctrl+E 选择搜索框</p>
+
+<p>Ctrl+F 选择搜索框</p>
+
+<p>在对话框中使用的快捷键</p>
+
+<p>Ctrl+Tab 在选项卡上向前移动</p>
+
+<p>Ctrl+Shift+Tab 在选项卡上向后移动</p>
+
+<p>Tab 在选项上向前移动</p>
+
+<p>Shift+Tab 在选项上向后移动</p>
+
+<blockquote>
+  <p>当然，这样的文章可以显得我更新的多</p>
+</blockquote>
+
+
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/07/21/tiaozheng/" data-toggle="tooltip" data-placement="top" title="BLOG的一些调整">
+                        Previous<br>
+                        <span>BLOG的一些调整</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/07/30/list/" data-toggle="tooltip" data-placement="top" title="一些人生的欲望清单">
+                        Next<br>
+                        <span>一些人生的欲望清单</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0095" 
+                    href="/archive/?tag=%E9%9A%8F%E6%83%B3%E5%BD%95"
+                    title="随想录"
+                    rel="118">随想录</a>
+        
+                <a data-sort="0149" 
+                    href="/archive/?tag=%E7%9E%8E%E6%89%AF"
+                    title="瞎扯"
+                    rel="64">瞎扯</a>
+        
+                <a data-sort="0152" 
+                    href="/archive/?tag=Thinking"
+                    title="Thinking"
+                    rel="61">Thinking</a>
+        
+                <a data-sort="0160" 
+                    href="/archive/?tag=%E7%AC%94%E8%AE%B0"
+                    title="笔记"
+                    rel="53">笔记</a>
+        
+                <a data-sort="0161" 
+                    href="/archive/?tag=%E8%AF%BB%E4%B9%A6"
+                    title="读书"
+                    rel="52">读书</a>
+        
+                <a data-sort="0163" 
+                    href="/archive/?tag=%E6%84%9F%E5%8F%B9"
+                    title="感叹"
+                    rel="50">感叹</a>
+        
+                <a data-sort="0170" 
+                    href="/archive/?tag=%E7%94%9F%E6%B4%BB"
+                    title="生活"
+                    rel="43">生活</a>
+        
+                <a data-sort="0173" 
+                    href="/archive/?tag=lofter"
+                    title="lofter"
+                    rel="40">lofter</a>
+        
+                <a data-sort="0184" 
+                    href="/archive/?tag=%E5%AD%A6%E4%B9%A0"
+                    title="学习"
+                    rel="29">学习</a>
+        
+                <a data-sort="0186" 
+                    href="/archive/?tag=%E4%BA%A7%E5%93%81"
+                    title="产品"
+                    rel="27">产品</a>
+        
+                <a data-sort="0190" 
+                    href="/archive/?tag=%E6%B3%B0%E5%9B%BD%E6%9D%82%E5%BF%86"
+                    title="泰国杂忆"
+                    rel="23">泰国杂忆</a>
+        
+                <a data-sort="0191" 
+                    href="/archive/?tag=%E6%84%9F%E6%85%A8"
+                    title="感慨"
+                    rel="22">感慨</a>
+        
+                <a data-sort="0194" 
+                    href="/archive/?tag=%E8%81%8C%E5%9C%BA"
+                    title="职场"
+                    rel="19">职场</a>
+        
+                <a data-sort="0197" 
+                    href="/archive/?tag=%E6%AD%A3%E7%BB%8F"
+                    title="正经"
+                    rel="16">正经</a>
+        
+                <a data-sort="0199" 
+                    href="/archive/?tag=%E7%94%B5%E5%BD%B1"
+                    title="电影"
+                    rel="14">电影</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E5%8E%9F%E5%88%99"
+                    title="原则"
+                    rel="12">原则</a>
+        
+                <a data-sort="0201" 
+                    href="/archive/?tag=%E7%BC%96%E7%A8%8B"
+                    title="编程"
+                    rel="12">编程</a>
+        
+                <a data-sort="0203" 
+                    href="/archive/?tag=Learning"
+                    title="Learning"
+                    rel="10">Learning</a>
+        
+                <a data-sort="0206" 
+                    href="/archive/?tag=%E5%8D%9A%E5%AE%A2"
+                    title="博客"
+                    rel="7">博客</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=%E6%97%85%E8%A1%8C"
+                    title="旅行"
+                    rel="3">旅行</a>
+        
+                <a data-sort="0210" 
+                    href="/archive/?tag=vlog"
+                    title="vlog"
+                    rel="3">vlog
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+  <li><a href="http://wdxtub.com/">小土刀</a></li>
+  
+  <li><a href="http://mindhacks.cn">暗时间</a></li>
+  
+  <li><a href="http://beforweb.com/front-end">前端-为网而生</a></li>
+  
+  <li><a href="http://huangxuan.me">黄玄的博客</a></li>
+  
+  <li><a href="http://matengteng.lofter.com">马腾的lofter</a></li>
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Link -->
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  <li>
+    <a href="/feed.xml">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://tengblog.com">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">腾</i>
+      </span>
+    </a>
+  </li>
+  
+
+  
+  
+  
+  <li>
+    <a href="http://www.lofter.com/blog/matengteng">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa  fa-stack-1x fa-inverse">乐</i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/mayongtao">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+
+</ul>
+
+                <p class="copyright text-muted">
+                    Copyright &copy; TENG 2019
+                    <br>
+                     向世界保持学习力 | Powered by <a href="https://tengblog.com">TengBlog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-79793350-1';
+    var _gaDomain = 'tengblog.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '6aa02cf6d8ee848133e919e39e594a3e';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
